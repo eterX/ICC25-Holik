@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">2</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">22e3dda7-a341-4023-8a38-35b8e4332d9e</dc:identifier>
+        <dc:title>Introduction to Classical and Quantum Computing</dc:title>
+        <dc:creator opf:file-as="Wong, Thomas G." opf:role="aut">Thomas G. Wong</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (8.13.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2022-01-21T03:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;"'Introduction to Classical and Quantum Computing' is for students who want to learn quantum computing beyond a conceptual level, but who lack advanced training in mathematics. The only prerequisite is trigonometry, and mathematics beyond that will be covered, including linear algebra. This book is suitable as a course textbook or for independent study. The text begins with a significant overview of classical computing, from how they add numbers to their computational limits, and it mirrors many of the quantum computing topics that are covered later. Then, the investigation of quantum computing begins with a single qubit and quantum gates acting on it, first using geometry and elementary algebra, and later using linear algebra. Computer algebra systems are utilized, and code for both Mathematica and SageMath is included. After one qubit, multi-qubit systems are covered, including how quantum computers add numbers, universal gate sets, and error correction. After this, readers learn how to program quantum circuits on actual quantum processors using IBM Quantum Experience. Afterward, entanglement and quantum protocols are explored. Finally, quantum algorithms are examined, culminating in Shor's algorithm for factoring. Abundant use of the Quirk quantum simulator is used throughout. Finally, a short discussion of careers in quantum computing is provided, along with some possible technical topics to learn next. &lt;/p&gt;
+&lt;p&gt;"--taken from back cover.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Rooted Grove</dc:publisher>
+        <dc:identifier opf:scheme="ISBN">9798985593105</dc:identifier>
+        <dc:identifier opf:scheme="GOOGLE">M3jqzgEACAAJ</dc:identifier>
+        <dc:language>eng</dc:language>
+        <dc:subject>Computers</dc:subject>
+        <dc:subject>General</dc:subject>
+        <dc:subject>Science</dc:subject>
+        <dc:subject>Physics</dc:subject>
+        <meta name="calibre:timestamp" content="2025-07-07T12:48:15+00:00"/>
+        <meta name="calibre:title_sort" content="Introduction to Classical and Quantum Computing"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Cover" href="cover.jpg"/>
+    </guide>
+</package>

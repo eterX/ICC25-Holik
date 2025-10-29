@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">3</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">f601b3a2-8616-4602-aaad-db48b4ba3f22</dc:identifier>
+        <dc:title>Classical and Quantum Computation</dc:title>
+        <dc:creator opf:file-as="Kitaev, Alexei Yu. &amp; Shen, Alexander &amp; Vyalyi, Mikhail N." opf:role="aut">Alexei Yu. Kitaev</dc:creator>
+        <dc:creator opf:file-as="Kitaev, Alexei Yu. &amp; Shen, Alexander &amp; Vyalyi, Mikhail N." opf:role="aut">Alexander Shen</dc:creator>
+        <dc:creator opf:file-as="Kitaev, Alexei Yu. &amp; Shen, Alexander &amp; Vyalyi, Mikhail N." opf:role="aut">Mikhail N. Vyalyi</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (8.13.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2002-10-15T03:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;This book is an introduction to a new rapidly developing theory of quantum computing. It begins with the basics of classical theory of computation: Turing machines, Boolean circuits, parallel algorithms, probabilistic computation, NP-complete problems, and the idea of complexity of an algorithm. The second part of the book provides an exposition of quantum computation theory. It starts with the introduction of general quantum formalism (pure states, density matrices, and superoperators), universal gate sets and approximation theorems. Then the authors study various quantum computation algorithms: Grover's algorithm, Shor's factoring algorithm, and the Abelian hidden subgroup problem. In concluding sections, several related topics are discussed (parallel quantum computation, a quantum analog of NP-completeness, and quantum error-correcting codes). &lt;/p&gt;
+&lt;p&gt;Rapid development of quantum computing started in 1994 with a stunning suggestion by Peter Shor to use quantum computation for factoring large numbers - an extremely difficult and time-consuming problem when using a conventional computer. Shor's result spawned a burst of activity in designing new algorithms and in attempting to actually build quantum computers. Currently, the progress is much more significant in the former: a sound theoretical basis of quantum computing is under development and many algorithms have been suggested. &lt;/p&gt;
+&lt;p&gt;In this concise text, the authors provide solid foundations to the theory - in particular, a careful analysis of the quantum circuit model - and cover selected topics in depth. Included are a complete proof of the Solovay-Kitaev theorem with accurate algorithm complexity bounds, approximation of unitary operators by circuits of doubly logarithmic depth. Among other interesting topics are toric codes and their relation to the anyon approach to quantum computing. Prerequisites are very modest and include linear algebra, elements of group theory and probability, and the notion of a formal or an intuitive algorithm. This text is suitable for a course in quantum computation for graduate students in mathematics, physics, or computer science. More than 100 problems (most of them with complete solutions) and an appendix summarizing the necessary results are a very useful addition to the book. It is available in both hardcover and softcover editions.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>American Mathematical Soc.</dc:publisher>
+        <dc:identifier opf:scheme="ISBN">9780821832295</dc:identifier>
+        <dc:identifier opf:scheme="GOOGLE">08vZYhafYEAC</dc:identifier>
+        <dc:language>eng</dc:language>
+        <dc:subject>Computers</dc:subject>
+        <dc:subject>Machine Theory</dc:subject>
+        <dc:subject>Quantum Computing</dc:subject>
+        <dc:subject>Mathematics</dc:subject>
+        <dc:subject>Applied</dc:subject>
+        <dc:subject>Discrete Mathematics</dc:subject>
+        <dc:subject>Science</dc:subject>
+        <dc:subject>Physics</dc:subject>
+        <dc:subject>Quantum Theory</dc:subject>
+        <meta name="calibre:timestamp" content="2025-10-25T18:35:42.355789+00:00"/>
+        <meta name="calibre:title_sort" content="Classical and Quantum Computation"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Cover" href="cover.jpg"/>
+    </guide>
+</package>

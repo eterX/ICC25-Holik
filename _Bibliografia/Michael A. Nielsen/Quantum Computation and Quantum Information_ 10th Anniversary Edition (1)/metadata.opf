@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">1</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">4cd9cf29-3c2b-46dd-986e-8a04fdb63c4d</dc:identifier>
+        <dc:title>Quantum Computation and Quantum Information: 10th Anniversary Edition</dc:title>
+        <dc:creator opf:file-as="Nielsen, Michael A. &amp; Chuang, Isaac L." opf:role="aut">Michael A. Nielsen</dc:creator>
+        <dc:creator opf:file-as="Nielsen, Michael A. &amp; Chuang, Isaac L." opf:role="aut">Isaac L. Chuang</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (8.13.0) [https://calibre-ebook.com]</dc:contributor>
+        <dc:date>2010-12-09T03:00:00+00:00</dc:date>
+        <dc:description>&lt;div&gt;
+&lt;p&gt;One of the most cited books in physics of all time, Quantum Computation and Quantum Information remains the best textbook in this exciting field of science. This 10th anniversary edition includes an introduction from the authors setting the work in context. This comprehensive textbook describes such remarkable effects as fast quantum algorithms, quantum teleportation, quantum cryptography and quantum error-correction. Quantum mechanics and computer science are introduced before moving on to describe what a quantum computer is, how it can be used to solve problems faster than 'classical' computers and its real-world implementation. It concludes with an in-depth treatment of quantum information. Containing a wealth of figures and exercises, this well-known textbook is ideal for courses on the subject, and will interest beginning graduate students and researchers in physics, computer science, mathematics, and electrical engineering.&lt;/p&gt;&lt;/div&gt;</dc:description>
+        <dc:publisher>Cambridge University Press</dc:publisher>
+        <dc:identifier opf:scheme="GOOGLE">j2ULnwEACAAJ</dc:identifier>
+        <dc:identifier opf:scheme="ISBN">9781107002173</dc:identifier>
+        <dc:language>eng</dc:language>
+        <dc:subject>Science</dc:subject>
+        <dc:subject>Physics</dc:subject>
+        <dc:subject>Quantum Theory</dc:subject>
+        <dc:subject>General</dc:subject>
+        <meta name="calibre:timestamp" content="2024-10-05T18:53:33+00:00"/>
+        <meta name="calibre:title_sort" content="Quantum Computation and Quantum Information: 10th Anniversary Edition"/>
+        <meta name="calibre:annotation" content="{&quot;format&quot;: &quot;EPUB&quot;, &quot;user_type&quot;: &quot;local&quot;, &quot;user&quot;: &quot;viewer&quot;, &quot;annotation&quot;: {&quot;removed&quot;: true, &quot;timestamp&quot;: &quot;2024-10-17T14:08:41.477Z&quot;, &quot;type&quot;: &quot;highlight&quot;, &quot;uuid&quot;: &quot;tqkjNiZAB-zGvREqgmMbQA&quot;}}"/>
+    </metadata>
+    <guide>
+        <reference type="cover" title="Cover" href="cover.jpg"/>
+    </guide>
+</package>

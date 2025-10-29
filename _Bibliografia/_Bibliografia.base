@@ -1,0 +1,12 @@
+filters:
+  or:
+    - file.hasTag("paper")
+views:
+  - type: table
+    name: Bibliografía
+    order:
+      - file.name
+      - tags
+    sort:
+      - property: file.name
+        direction: ASC
