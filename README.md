@@ -22,7 +22,8 @@ __Régimen de cursada__
 	- **Fecha:** Martes, desde el 7 de octubre
 	- **Horario:** 10:00 - 13:00 hs, Zona horaria: América/Argentina/Buenos_Aires
 - Campus:
-	- [Campus 2025 UNaHur](https://campus2025.unahur.edu.ar/course/view.php?id=2095
+	- [Campus 2025 UNaHur](https://campus2025.unahur.edu.ar/course/view.php?id=2095)
+	- [gDrive](https://drive.google.com/drive/folders/1fpyi9ThT0FRvJgsfCIdDL-WJNN381jlK)
 - Evaluaciones:
 	- 
 
