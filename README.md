@@ -33,4 +33,22 @@ __Régimen de cursada__
 task-todo:/.*/ -path:__templates
 ```
 
+## sobre éste repositorio
+
+Se trata de un "vault" de [Obsidian](https://obsidian.ms), resumiendo el material del curso, con el objetivo últimode crecer una base de conocimiento en Castellano. 
+Obsidian es un gestor de conocimiento multiplataforma, de código propietario pero mantiene todos los datos del usuario en formatos abiertos y de texto (Markdown, YAML, Mermaid.js).
+Los miembros puede contribuir en la forma estandár de cualquier repositorio Git 
+
+### archivo README (éste archivo)
+
+Es a la vez la presentación del repositorio, y punto de entrada en Obsidian. 
+
+### archivos locales
+
+	Solo las carpetas que comiencen con `_*` serán sincronizadas via git (ver `.gitignore` por excepciones)
+Otras carpetas y archivos será locales, personales, y fuera del repositorio. De esa manera, cada miembro puede crearlos a voluntad.
+
+
+(C) Federico Hernán Holik  y contribuyentes
+Licencias: [cc-by-sa-4.0](https://choosealicense.com/licenses/cc-by-sa-4.0/), [GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
 # EOF
