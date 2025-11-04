@@ -1,0 +1,16 @@
+/* @theme marpit-theme */
+@import 'gaia';
+
+section {
+  font-size: 35px;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 60px;
+  color: #09c;
+}
+
+h2 {
+  font-size: 45px;
+}
