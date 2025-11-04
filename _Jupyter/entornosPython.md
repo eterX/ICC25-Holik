@@ -5,7 +5,7 @@ paginate: true
 backgroundColor:
 backgroundImage: url('./entornosPython.svg')
 ---
----
+
 # Entorno Python para ICC25
 
 - QC: **simulación** vs compu física
@@ -13,6 +13,11 @@ backgroundImage: url('./entornosPython.svg')
 - entorno local: sistema vs **venv**
 - distribución: Python.org vs **propietaria**
 
+
+| <sub>(C) Federico Hernán Holik  y contribuyentes</sub> |
+| ------------------------------------------------------ |
+<sub>Licencias: [cc-by-sa-4.0](https://choosealicense.com/licenses/cc-by-sa-4.0/), </sub><sub>[GPLv3](https://choosealicense.com/licenses/gpl-3.0/)</sub>
+<sub>Fuente: https://github.com/eterX/ICC25-Holik/blob/main/_Jupyter/entornosPython.md</sub>
 
 ---
 
@@ -110,6 +115,34 @@ https://www.datacamp.com/es/tutorial/installing-anaconda-windows
 
 ➡️ "siga, siga" ➡️
 
+## instalacion
+
+- instalar Conda  (distribución privativa de Python)
+- crear entorno ICC25:
+
+```sh
+cd _Jupyter # desde la bóveda de Obsidian
+conda env create --solver libmamba --file ICC25.yml --name ICC25
+conda init
+conda activate ICC25
+```
+
+>[!warn] posible solución de problemas
+  --solver {classic,libmamba} 
+
+
+---
+
+## Anaconda: instalación Linux/MacO$
+
+- ejecutar `jupyter lab` y abrir un cuaderno
+```sh
+cd # a la bóveda de Obsidian
+conda activate ICC25 # nuevo prompt: (ICC25) ➜  ICC25-Holik git:(main) ✗
+jupyter-lab # abre navegador
+```
+
+
 ---
 
 # Conclusiones
@@ -122,8 +155,3 @@ https://www.datacamp.com/es/tutorial/installing-anaconda-windows
 | ⛈️                  | - sin instalación                                  | - costo directo<br>- colaboración(😣) |
 
 **Preguntas? Gracias!**
-
----
-
-
-#### 
