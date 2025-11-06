@@ -4,9 +4,10 @@
 #
 /*
 !_*
-#excepciones "oficiales"
+#excepciones "oficiales", ver /admin.md
 !README.md
 !README.d/
+!.stignore
 
 # Onsidian e IDES
 .obsidian

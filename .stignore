@@ -1,0 +1,7 @@
+_*/
+tmp/
+**/.git/
+**/.idea/
+**/.obsidian/plugins/
+**/._* (?d)
+**/.DS_Store
