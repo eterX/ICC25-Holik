@@ -22,7 +22,7 @@ __Régimen de cursada__
 	- **Fecha:** Martes, desde el 7 de octubre
 	- **Horario:** 10:00 - 13:00 hs, Zona horaria: América/Argentina/Buenos_Aires
 - Campus:
-	- [Campus 2025 UNaHur](https://campus2025.unahur.edu.ar/course/view.php?id=2095)
+	- [Campus 2025 UNaHur](https://campus2025.unahur.edu.ar/course/view.php?id=2095) (moodle id: ICC2025)
 	- [gDrive](https://drive.google.com/drive/folders/1fpyi9ThT0FRvJgsfCIdDL-WJNN381jlK)
 - Evaluaciones:
 	- 
@@ -35,6 +35,7 @@ task-todo:/.*/ -path:__templates
 
 ## sobre éste repositorio
 
+No es un repositorio oficial del curso
 Se trata de un "vault" de [Obsidian](https://obsidian.ms), resumiendo el material del curso, con el objetivo últimode crecer una base de conocimiento en Castellano. 
 Obsidian es un gestor de conocimiento multiplataforma, de código propietario pero mantiene todos los datos del usuario en formatos abiertos y de texto (Markdown, YAML, Mermaid.js).
 Los miembros puede contribuir en la forma estandár de cualquier repositorio Git 
@@ -49,6 +50,7 @@ Es a la vez la presentación del repositorio, y punto de entrada en Obsidian.
 Otras carpetas y archivos será locales, personales, y fuera del repositorio. De esa manera, cada miembro puede crearlos a voluntad.
 
 
-(C) Federico Hernán Holik  y contribuyentes
-Licencias: [cc-by-sa-4.0](https://choosealicense.com/licenses/cc-by-sa-4.0/), [GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
+(C) [Federico H. Holik](https://holik.com.ar/)
+Licencias: [cc-by-sa-4.0](https://choosealicense.com/licenses/cc-by-sa-4.0/), [GPLv3](https://choosealicense.com/licenses/gpl-3.0/) (aplica la mas restrictiva)
+
 # EOF
