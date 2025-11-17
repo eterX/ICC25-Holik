@@ -818,7 +818,7 @@ En la **Clase 3** se abordarán:
 
 **Palabras clave:** espacios vectoriales, números complejos, álgebra lineal, mecánica cuántica, doble rendija, superposición, probabilidad, bases, dimensión, combinaciones lineales, independencia lineal
 
-**Tags:** #cuántica #álgebra-lineal #espacios-vectoriales #números-complejos #fundamentos #clase02
+**Tags:** #cuántica #álgebra-lineal #fundamentos #clase2
 
 ---
 

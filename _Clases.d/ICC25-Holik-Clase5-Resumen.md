@@ -674,7 +674,7 @@ if __name__ == "__main__":
 
 **Palabras clave:** Qiskit, Braket, estado singlete, transpilación, modelos de ruido, convergencia estadística, simuladores, backends, entrelazamiento, programación cuántica
 
-**Tags:** #computación-cuántica #qiskit #braket #implementación #práctica #clase05 #estado-singlete #ruido #transpilación #simuladores
+**Tags:** #computación-cuántica #qiskit #braket #implementación #práctica #estado-singlete #ruido #transpilación #simuladores #clase5
 
 ---
 

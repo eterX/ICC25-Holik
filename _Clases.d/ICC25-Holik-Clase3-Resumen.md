@@ -1548,4 +1548,4 @@ Modificar el código anterior para probar diferentes estados iniciales y secuenc
 
 **Palabras clave:** Stern-Gerlach, transformaciones lineales, compuertas cuánticas, Hadamard, Pauli, circuitos cuánticos, probabilidad frecuentista, unitariedad, reversibilidad
 
-**Tags:** #cuántica #transformaciones-lineales #compuertas #Hadamard #Stern-Gerlach #clase03
+**Tags:** #cuántica #transformaciones-lineales #compuertas #Hadamard #Stern-Gerlach #clase3 
