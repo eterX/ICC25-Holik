@@ -1,5 +1,6 @@
 
 > ⚠️ asegurate de pasar por la sección **"sobre éste repositorio"** abajo ⚠️
+
 > 👉 en la diaria, la nota mas jugosa es [[_Clases]] 👈
 
 
