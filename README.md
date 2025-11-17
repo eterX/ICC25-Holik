@@ -1,3 +1,7 @@
+
+>[!warn] leer la sección **"sobre éste repositorio"**
+
+
 ## Bienvenida
 
 
@@ -35,10 +39,16 @@ task-todo:/.*/ -path:__templates
 
 ## sobre éste repositorio
 
-No es un repositorio oficial del curso
-Se trata de un "vault" de [Obsidian](https://obsidian.ms), resumiendo el material del curso, con el objetivo últimode crecer una base de conocimiento en Castellano. 
+**No es un repositorio oficial** del curso, pero está autorizado por el Dr Holik, como un esfuerzo colectivo para recopilar el material, apuntando a suplir cierta deficiencia de bibliografía en Castellano.
+Se trata de un "vault" de [Obsidian](https://obsidian.ms), resumiendo el material del curso, con el objetivo último de crecer una base de conocimiento en Castellano. 
 Obsidian es un gestor de conocimiento multiplataforma, de código propietario pero mantiene todos los datos del usuario en formatos abiertos y de texto (Markdown, YAML, Mermaid.js).
-Los miembros puede contribuir en la forma estandár de cualquier repositorio Git 
+Los miembros del curso pueden:
+- contribuir activamente las formas estándar de cualquier repositorio Git (gitlab, github, etc)
+- consultar pasivamente el material de éstas maneras:
+	- directamente en  [github](https://github.com/eterX/icc25-holik)
+	- en el *render* web del repo, una especie de wiki, en:
+	- clonando el repo, y abriéndolo off-line con cualquier editor de texto (aunque es recomandable el uso de [Obsidian.md](Obsidian.md))
+	
 
 ### archivo README (éste archivo)
 
