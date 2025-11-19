@@ -35,11 +35,14 @@ empate: colaboración
 
 ##  entorno local: sistema vs **venv**
 
-sin dudas: entorno virtual por:
- - Distribución de SO  ⚠️
-- Lenguaje interpretado ( 🔋 incluídas)
-- Portable y a medida 👍
-- en gColab se regenera en cada servidor  👎 
+sin dudas... entorno virtual!
+
+- Ventajas:
+	- Lenguaje interpretado ( 🔋 incluidas)
+	- Portable y a medida 
+- ⚠️Precauciones⚠️
+	- Evitamos toquetear la distribución de SO  
+	- gColab lo **reconstruye de cero** en cada sesión  
 
 ---
 ### simulación: cuadernos  Jupyter
