@@ -1,10 +1,11 @@
 # https://git-scm.com/docs/gitignore
 #
 # ignoramos todos los que no empiezan con _, incluyendo __*
+# las excepciones son README.md y README.d/
 #
 /*
 !_*
-#excepciones "oficiales", ver /admin.md
+#excepciones "oficiales", ver /README.md
 !README.md
 !README.d/
 !.stignore

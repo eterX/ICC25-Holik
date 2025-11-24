@@ -5,7 +5,7 @@ paginate: true
 backgroundColor:
 backgroundImage: url('./entornosPython.svg')
 ---
-
+ww
 # Entorno Python para ICC25
 
 - QC: **simulación** vs compu física
