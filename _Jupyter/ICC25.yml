@@ -38,4 +38,6 @@ dependencies:
     - pylatexenc
     - qiskit
     - qiskit_aer
+    - qiskit-ibm-runtime
+    - qiskit[visualization]
 prefix: /opt/anaconda3
