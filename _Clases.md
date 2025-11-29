@@ -19,8 +19,6 @@ Tel: 2066-1958 (int. 870)
 - **Fecha:** Martes, 7 de octubre    
 - **Horario:** 10:00 - 13:00 h
 - **Enlace de videollamada:** https://meet.google.com/azn-kydg-vjh 
-- [whasá](https://chat.whatsapp.com/HbiWf9FsxCm8f44LJBGf0A)
-- al Ing. Martín Fernando PURICELLI (C.U.I.L 20- 20654919-0) como Director del Instituto de Tecnología de la UNIVERSIDAD NACIONAL DE HURLINGHAM.
 
 
 # 2025-10-07 clase1
@@ -80,4 +78,26 @@ Tel: 2066-1958 (int. 870)
 ## tareas para próxima clase
 
 - [x]  tarea completada
+- [x] resumir 
+- [ ] Revisar [[.Clases.d/ICC25-Holik-Clase5-Resumen|Resumen]]
+
+
+
+# 2025-11-18 clase6
+
+- [x]  ausente
+- [x] resumir 
+- [ ] Revisar [[.Clases.d/ICC25-Holik-Clase5-Resumen|Resumen]]
+
+# 2025-11-25 clase7
+
+- [x]  ausente
+- [ ] resumir 
+- [ ] Revisar [[.Clases.d/ICC25-Holik-Clase5-Resumen|Resumen]]
+
+
+## tareas para próxima clase
+
+- [x]  tarea completada
+
 # EOF

@@ -53,7 +53,7 @@ Los miembros del curso pueden:
 	- en el *render* web del repo, una especie de wiki, en:
 	- clonando el repo, y abriéndolo off-line con cualquier editor de texto (aunque es recomandable el uso de [Obsidian.md](Obsidian.md))
 	
-
+Sobre el navegador de Obsidian)
 ### archivo README (éste archivo)
 
 Es a la vez la presentación del repositorio, y punto de entrada en Obsidian. 

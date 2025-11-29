@@ -1,7 +1,7 @@
 
 # Entorno Jupyter
 
-## instalacion
+## instalación
 
 - instalar Conda  (distribución privativa de Python)
 - crear entorno ICC25:
