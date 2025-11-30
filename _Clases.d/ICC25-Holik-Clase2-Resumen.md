@@ -265,16 +265,25 @@ P(A) = lim(N→∞) [#(A ocurre) / N]
 - Comportamiento probabilístico intrínseco
 
 **Representación de Estados:**
+
+Ejemplo: Experimento de la doble rendija:
 - Estado "rendija izquierda": |L⟩ = (1, 0)
 - Estado "rendija derecha": |R⟩ = (0, 1)
+
+![](doble_rendija_clasico.png)
+
+
 - Superposición: |ψ⟩ = α|L⟩ + β|R⟩ = (α, β)
 - Los coeficientes α, β están relacionados con probabilidades
+![](doble_rendija_ondulatorio.png)
+
 
 **Evolución Temporal:**
 La evolución viene dada por operadores lineales (matrices):
-```
 |ψ(t)⟩ = U(t)|ψ(0)⟩ = e^(-iHt/ℏ)|ψ(0)⟩
-```
+$$\ket{\psi(t)} = U(t)\ket{\psi(0)} = e^{-(iHt/ℏ)\ket{\psi(0)}}$$
+
+
 donde H es el hamiltoniano del sistema.
 
 **Referencias bibliográficas:**
@@ -416,8 +425,6 @@ mindmap
       Notación ket |ψ⟩
       Coeficientes complejos
       Interpretación probabilística
-        P(0) = |α|²
-        P(1) = |β|²
     Operaciones
       Compuertas cuánticas
       Matrices unitarias
