@@ -13,9 +13,7 @@
 
 La tercera clase marca un punto de inflexión en el curso, estableciendo el puente entre el formalismo matemático abstracto desarrollado en las clases anteriores y las aplicaciones concretas en computación cuántica. El eje central de la sesión fue comprender cómo las transformaciones lineales operan sobre espacios vectoriales complejos y cómo estas se materializan en compuertas lógicas cuánticas.
 
-El docente utilizó el experimento de Stern-Gerlach como ejemplo arquetípico para ilustrar la naturaleza probabilística de la mecánica cuántica y el concepto de qubit físico. Este experimento hist
-
-órico demuestra que magnitudes físicas como el momento magnético del electrón (spin) están cuantizadas, pudiendo tomar únicamente dos valores discretos en cualquier dirección de medición. Esta discretización es el análogo físico del bit cuántico (qubit).
+El docente utilizó el experimento de Stern-Gerlach como ejemplo arquetípico para ilustrar la naturaleza probabilística de la mecánica cuántica y el concepto de qubit físico. Este experimento histórico demuestra que magnitudes físicas como el momento magnético del electrón (spin) están cuantizadas, pudiendo tomar únicamente dos valores discretos en cualquier dirección de medición. Esta discretización es el análogo físico del bit cuántico (qubit).
 
 Se profundizó en la interpretación frecuentista de la probabilidad, esencial para comprender cómo se contrastan experimentalmente las predicciones de la teoría cuántica. A diferencia de la probabilidad clásica, que surge de la ignorancia sobre variables ocultas, la probabilidad cuántica es intrínseca a la naturaleza: el sistema genuinamente no posee valores definidos antes de la medición.
 
@@ -40,15 +38,15 @@ La clase culminó introduciendo la notación de circuitos cuánticos, donde las 
 #### 1.1 Configuración Experimental
 
 **Componentes:**
-- **Fuente (F):** Horno que calienta plata generando un vapor atómico
+- **Fuente (O):** Horno que calienta plata generando un vapor atómico
 - **Selector de velocidades (S):** Colima el haz atómico
 - **Campo magnético inhomogéneo (M):** Imán con geometría especial que produce gradiente de campo
-- **Pantalla detectora:** Superficie metálica que registra el impacto de átomos
-
+- **Pantalla detectora(D):** Superficie metálica que registra el impacto de átomos
+![[stern_esquema.png]]
 **Disposición espacial:**
 ```
 [Fuente] → [Selector] → [Imán] → [Pantalla]
-   (F)        (S)         (M)       (Detector)
+   (O)        (S)         (M)       (D)
 ```
 
 **Principio físico:**
@@ -56,13 +54,13 @@ Los átomos de plata tienen un electrón desapareado en la capa externa con mome
 
 $$F_z \propto \mu_z \cdot \frac{dB}{dz}$$
 
-donde μ_z es la componente z del momento magnético y dB/dz es el gradiente del campo.
+donde $μ_z$ es la componente z del momento magnético y dB/dz es el gradiente del campo.
 
 #### 1.2 Predicción Clásica vs. Resultado Cuántico
 
 **Predicción Clásica:**
 - El momento magnético puede tener cualquier orientación en el espacio
-- El momento magnético toma valores continuos: μ_z ∈ [-μ₀, +μ₀]
+- El momento magnético toma valores continuos: $μ_z ∈ [-μ₀, +μ₀]$
 - **Patrón esperado:** Distribución continua en la pantalla (mancha uniforme)
 
 **Resultado Experimental:**
@@ -86,29 +84,39 @@ donde μ_z es la componente z del momento magnético y dB/dz es el gradiente del
 #### 1.3 Representación Matemática
 
 **Estados base (notación física):**
-- Spin arriba en dirección z: |↑⟩_z o |up⟩_z
-- Spin abajo en dirección z: |↓⟩_z o |down⟩_z
+- Spin arriba en dirección z: $|↑⟩_z$ o $|up⟩_z$
+- Spin abajo en dirección z: $|↓⟩_z$ o $|down⟩_z$
 
 **Estados base (notación computacional):**
-- |0⟩ = |↑⟩_z = (1, 0)ᵀ  — spin arriba
-- |1⟩ = |↓⟩_z = (0, 1)ᵀ  — spin abajo
+- |0⟩ = (1, 0)ᵀ  = $\ket{↑}_z$ — spin arriba
+- |1⟩ = (0, 1)ᵀ  = $\ket{↓}_z$ — spin abajo
 
-**Espacio de estados:** ℂ² (espacio vectorial complejo de dimensión 2)
+siendo vectores, si le agregamos producto interno, obtenemos un *Espacio de Estados de Hilbert* ℂ² (espacio vectorial complejo de dimensión 2)
+
+>[!tip] para no confundir |0⟩ con |1⟩, recordar las columnas de $\mathbb{I}$:
+
+$\mathbb{I}=\left[\begin{matrix}1 & 0 \\ 0 & 1\end{matrix}\right]$
+
 
 **Estado general:**
-$$|\psi\rangle = \alpha|0\rangle + \beta|1\rangle = \begin{pmatrix} \alpha \\ \beta \end{pmatrix}$$
+$$|\psi\rangle = \alpha \ket{↑} + \beta \ket{↓} = \begin{pmatrix} \alpha \\ \beta \end{pmatrix}$$
 
-donde α, β ∈ ℂ y |α|² + |β|² = 1 (normalización).
+donde α, β ∈ ℂ y |α|² + |β|² = 1 (normalización, ver [[_Teoria/Algebra]]).
+
+Cuando medimos en el eje $\hat{z}$, es decir, con el operador $\sigma_z$:
+![[stern_ejez.png]]
+Solo obtendremos  $\ket{↑}_z$ o  $\ket{↑}_z$ , a pesar de que el estado en $F$ sea una superposición, $\alpha \ket{↑} + \beta \ket{↓}$. Y los obtendremos con probabilidades P dadas por la Regla de Born: $P(↑) = |{\alpha}|^2$ y  $P(↓)=|\beta|^2$ (recordar q son escalares complejos de un espacio de Hilbert).
+
 
 #### 1.4 Dependencia Contextual: Rotación del Imán
 
-**Concepto crucial:** Si se rota el imán un ángulo θ respecto a la dirección z, se obtiene una nueva base de medición. Las probabilidades de obtener "arriba" o "abajo" en la nueva dirección dependen de θ y del estado inicial.
-
-**Ejemplo concreto:**
+**Concepto crucial:** Si se rota el imán un ángulo θ respecto a la dirección $\hat{z}$, se obtiene una nueva base de medición. Las probabilidades de obtener "arriba" o "abajo" en la nueva dirección dependen de θ y del estado inicial.
+![[stern_rotado.png]]
+**Ejemplos de  "contextos de experimentación":**
 - Preparación inicial: |ψ⟩ = (1/√2)|0⟩ + (1/√2)|1⟩ (superposición balanceada)
-- Medición en dirección z: P(↑) = P(↓) = 50%
+- Medición en dirección z: $P^z(↑) = P^z(↓) = 50\%$
 - Medición en dirección x (θ = 90°): Probabilidades diferentes
-- Medición en dirección θ arbitraria: P(↑_θ) = |⟨↑_θ|ψ⟩|² (regla de Born)
+- Medición en dirección θ arbitraria: $P^θ(↑) = P(↑_θ) = P_θ(↑) = |⟨↑_θ|ψ⟩|²$ (regla de Born)
 
 **Filosofía cuántica:**
 > "Los resultados de experimentos que no se hicieron no tienen resultados."  
@@ -118,6 +126,8 @@ Esta frase encapsula el carácter contextual de la mecánica cuántica: pregunta
 
 **Conexión con Clase 1:** Este experimento ilustra concretamente los [[ICC25-Holik-Clase1-Resumen#Principios Fundamentales|principios fundamentales]] discutidos en la primera clase: cuantización, indeterminismo y contextualidad.
 
+
+
 ---
 
 ### 2. Interpretación Frecuentista de la Probabilidad
@@ -126,18 +136,20 @@ Esta frase encapsula el carácter contextual de la mecánica cuántica: pregunta
 
 #### 2.1 Concepto de Frecuencia Relativa
 
+La Físicia Cuántica, y por lo tanto la Computación Cuántica, *es probabilística* 
+
 **Experimento conceptual: la moneda**
 
-Definimos la probabilidad de obtener "cara" (C) al lanzar una moneda como:
+Definimos la probabilidad de obtener "cara" al lanzar una moneda como:
 
 $$P(\text{cara}) = \lim_{N \to \infty} \frac{\#(\text{lanzamientos que dan cara})}{N}$$
 
 donde N es el número total de lanzamientos.
 
 **Ejemplo numérico:**
-- Primera tirada (N=100): 40 caras, 60 secas → P_exp(cara) ≈ 0.40
-- Segunda tirada (N=100): 52 caras, 48 secas → P_exp(cara) ≈ 0.52
-- Tercera tirada (N=1000): 487 caras, 513 secas → P_exp(cara) ≈ 0.487
+- Primera tirada (N=100): 40 caras, 60 secas → $P_{exp}(cara) ≈ 0.40$
+- Segunda tirada (N=100): 52 caras, 48 secas → $P_{exp}(cara) ≈ 0.52$
+- Tercera tirada (N=1000): 487 caras, 513 secas → $P_{exp}(cara) ≈ 0.487$
 - Valor teórico esperado: P(cara) = 0.5
 
 **Características de la frecuencia relativa:**
@@ -145,24 +157,28 @@ donde N es el número total de lanzamientos.
 2. **Fluctuaciones:** Cuanto menor N, mayores fluctuaciones estadísticas
 3. **Universalidad:** Mismo procedimiento para sistemas clásicos y cuánticos
 
+![[clase3-diapo19.png]]
+>[!note] principio de incertidumbre de Heisenberg , $\hbar$ es la constante de Plank ("hache barra").
+
+
 #### 2.2 Aplicación al Experimento de Stern-Gerlach
 
 **Protocolo experimental:**
 1. Preparar el sistema cuántico en un estado |ψ⟩ fijo
-2. Orientar el imán en dirección θ fija
+2. Orientar el imán en dirección $θ$ fija
 3. Hacer pasar N átomos preparados idénticamente
-4. Contar cuántos se deflectan hacia arriba (N_↑) y hacia abajo (N_↓)
+4. Contar cuántos se deflectan hacia arriba ($N_↑$) y hacia abajo ($N_↓$)
 5. Calcular frecuencias:
-   - f(↑) = N_↑ / N
-   - f(↓) = N_↓ / N
+   - $f(↑) = N_↑ / N$
+   - $f(↓) = N_↓ / N$
 
 **Conexión teoría-experimento:**
-- La mecánica cuántica predice: P(↑|ψ,θ) = |⟨↑_θ|ψ⟩|²
-- El experimento mide: f(↑) ≈ P(↑|ψ,θ) para N grande
-- Verificación: |f(↑) - P(↑|ψ,θ)| → 0 cuando N → ∞
+- La mecánica cuántica predice: $P(↑|ψ,θ) = |⟨↑_θ|ψ⟩|²$
+- El experimento mide: $f(↑) ≈ P(↑|ψ,θ)$ para N grande
+- Verificación: $|f(↑) - P(↑|ψ,θ)| \rightarrow 0$ cuando N → ∞
 
 **Diferencia fundamental con moneda:**
-- **Moneda:** P(cara) = P(seca) = 1/2 (simétrica)
+- **Moneda:** P(cara) = P(seca) = 1/2 , es simétrica
 - **Qubit:** P(↑) y P(↓) dependen de |ψ⟩ y θ
   - Puede ser 50%-50%, o 70%-30%, o 90%-10%, etc.
   - La "asimetría" codifica información sobre el estado cuántico
@@ -171,19 +187,25 @@ donde N es el número total de lanzamientos.
 
 **Tabla comparativa:**
 
-| Aspecto | Clásica | Cuántica |
-|---------|---------|----------|
-| **Origen** | Ignorancia (epistémica) | Naturaleza (ontológica) |
-| **Variables ocultas** | En principio existen | No existen (teoremas de Bell, Kochen-Specker) |
-| **Predicción individual** | Imposible por limitaciones prácticas | Imposible por principio |
-| **Estructura matemática** | Teoría de conjuntos + medida | Espacios de Hilbert + operadores |
-| **Regla de cálculo** | Axiomas de Kolmogorov | Regla de Born: P = \|⟨φ\|ψ⟩\|² |
-| **Interferencia** | No hay | Fundamental (experimento doble rendija) |
+| Aspecto                   | Clásica                              | Cuántica                                      |
+| ------------------------- | ------------------------------------ | --------------------------------------------- |
+| **Origen**                | Ignorancia (epistémica)              | Naturaleza (ontológica)                       |
+| **Variables ocultas**     | En principio existen                 | No existen (teoremas de Bell, Kochen-Specker) |
+| **Predicción individual** | Imposible por limitaciones prácticas | Imposible por principio                       |
+| **Estructura matemática** | Teoría de conjuntos + medida         | Espacios de Hilbert + operadores              |
+| **Regla de cálculo**      | Axiomas de Kolmogorov                | Regla de Born: P = \|⟨φ\|ψ⟩\|²                |
+| **Interferencia**         | No hay                               | Fundamental (experimento doble rendija)       |
 
 **Cita del docente:**
 > "En física clásica, cuando medís el momento magnético de una partícula y te da 0.1, ese era el valor antes de medir. En cuántica, el resultado de la medición NO revela un valor preexistente—el sistema genuinamente no tenía ese valor antes."
 
 **Implicancia filosófica:** La realidad cuántica es fundamentalmente indeterminada. El acto de medición no solo revela información preexistente, sino que co-crea el resultado observado.
+
+![[clase3-diapo33.png]]
+>[!note] esa "estructura lógica" está destilada en el Álgebra de Boole
+
+
+![[clase3-diapo39.png]]
 
 **Referencias bibliográficas:**
 - **Nielsen & Chuang:** Sección 2.2.3 "Quantum measurement" (págs. 84-92) - Postulado de medición
