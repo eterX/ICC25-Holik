@@ -17,6 +17,8 @@ La clase se estructuró en dos partes principales: (1) análisis del interferóm
 
 ### 1.1 Configuración Experimental
 
+![[Mach-Zehnder-setup.png]]
+
 El interferómetro consta de:
 - **BS1 y BS2**: Divisores de haz (*beam splitters*) semirreflectantes (50% transmisión, 50% reflexión)
 - **M1 y M2**: Espejos 100% reflectantes
@@ -33,7 +35,7 @@ El interferómetro consta de:
 
 $$\text{BS} = \frac{1}{\sqrt{2}}\left[\begin{array}{cc}1 & i \\ i & 1\end{array}\right]$$
 
-$$\text{PS}(\delta) = \left[\begin{array}{cc}1 & 0 \\ 0 & e^{i\delta}\end{array}\right]$$
+$$\text{PS}(\Delta) = \left[\begin{array}{cc}1 & 0 \\ 0 & e^{i\Delta}\end{array}\right]$$
 
 **Evolución del estado** (con BS2):
 
