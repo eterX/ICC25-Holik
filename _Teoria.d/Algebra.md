@@ -1,3 +1,9 @@
+---
+aliases:
+  - Álgebra
+  - Álgebra Lineal
+  - Linear Algebra
+---
 
 ## Varios
 
@@ -17,7 +23,16 @@ $$A\ket{v_j} = \sum_{i=1}^{n} A_{ij}\ket{w_i} \tag{NC 2.12}$$
 
 **Notar:**
 - A un mismo operador $A$, cambia su representación matricial si cambia alguna de las bases
+- - Si A: V → V (del espacio en sí mismo), se llama **operador lineal**
+- Si A: V → W (entre espacios distintos), se llama **transformación lineal**
 - La columna $j$ de $A$ es el resultado (en $W$) de aplicar $A\ket{v_j}$
+	-  ejemplo de [[Computacion|Computación Cuántica]]:
+$$X\ket{0} = X\begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \ket{1}$$
+$$X\ket{1} = X\begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \ket{0}$$
+	- ejemplo de [[Computacion|Computación Cuántica]]:
+$$H\ket{0} = H\begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \ket{+}$$
+$$H\ket{1} = H\begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix} = \ket{-}$$
+
 
 ---
 
@@ -44,7 +59,7 @@ $$A\ket{v_j} = \sum_{i=1}^{m} A_{ij}\ket{w_i} \tag{NC 2.12}$$
 **Ejemplo:**
 
 
-$$T\left[\begin{array}{c} -1 \\ 2 \end{array}\right] = \left[\begin{array}{cc} 1 & 3 \\ -2 & 0 \end{array}\right] \left[\begin{array}{c} -1 \\ 2 \end{array}\right] = \left[\begin{array}{c} 5 \\ 2 \end{array}\right]$$
+$$T(\vec{v}) = T\left[\begin{array}{c} -1 \\ 2 \end{array}\right] = \left[\begin{array}{cc} 1 & 3 \\ -2 & 0 \end{array}\right] \left[\begin{array}{c} -1 \\ 2 \end{array}\right] = \left[\begin{array}{c} 5 \\ 2 \end{array}\right]$$
 ![](algebra_tranf_base.png)
 porque:
 ![](algebra_tranf_matriz.png)
@@ -217,18 +232,18 @@ $$\braket{v|w} = \left[\begin{array}{ccc} v_1^* & \cdots & v_n^* \end{array}\rig
 
 ## Notación de Dirac
 
-| Notación | Descripción |
-|----------|-------------|
-| $z^*$ | Conjugado complejo del número complejo $z$.<br>$(1 + i)^* = 1 - i$ |
-| $\ket{\psi}$ | Vector. También conocido como *ket*. Vector de estado cuántico en el espacio de Hilbert.<br><br>$$\ket{\psi} = \left[\begin{array}{c} a \\ b \end{array}\right]$$ |
-| $\bra{\psi}$ | Dual (conjugado transpuesto) de $\ket{\psi}$. También conocido como *bra*.<br>$$\bra{\psi} = \ket{\psi}^\dagger = \left[\begin{array}{cc} a^* & b^* \end{array}\right]$$ |
-| $\braket{\varphi\|\psi}$ | Producto interno entre los vectores $\ket{\varphi}$ y $\ket{\psi}$. Generalización del producto escalar al espacio complejo de Hilbert. **Devuelve un escalar.**<br><br>Norma de $\ket{\psi}$ al cuadrado: $\braket{\psi\|\psi} = \|\psi\|^2$<br>Regla de Born: $P(\ket{i}) = \|\braket{i\|\psi}\|^2$ (probabilidad de medir $\ket{i}$) |
-| $\ket{\varphi} \otimes \ket{\psi}$ | Producto tensorial de $\ket{\varphi}$ y $\ket{\psi}$. Operación fundamental para sistemas cuánticos compuestos (múltiples qubits).<br><br>Notación abreviada: $\ket{\varphi}\ket{\psi}$ o $\ket{\varphi\psi}$<br>Adjunto: $(\ket{\psi} \otimes \ket{\phi})^\dagger = \bra{\psi} \otimes \bra{\phi}$ |
-| $\ket{\varphi}\bra{\psi}$ | Operador proyección (ket-bra) o *producto externo*. **Devuelve una matriz.**<br><br>Completitud: $\sum_i \ket{i}\bra{i} = \mathbb{I}$ (base ortonormal $\{\ket{i}\}$)<br>Matriz de densidad: $\rho = \ket{\psi}\bra{\psi}$ |
-| $A^*$ | Conjugado complejo de la matriz $A$. |
-| $A^T$ | Transpuesta de la matriz $A$. |
-| $A^\dagger$ | Conjugado hermítico o adjunto de la matriz $A$, $A^\dagger = (A^T)^*$. Extensión al espacio complejo de la transpuesta.<br><br>$$\left[\begin{array}{cc} a & b \\ c & d \end{array}\right]^\dagger = \left[\begin{array}{cc} a^* & c^* \\ b^* & d^* \end{array}\right]$$ |
-| $\bra{\varphi}A\ket{\psi}$ | Producto interno entre $\ket{\varphi}$ y $A\ket{\psi}$.<br>Equivalentemente: producto interno entre $A^\dagger\ket{\varphi}$ y $\ket{\psi}$.<br><br>Propiedad: $(\bra{\psi}A\ket{\phi})^* = \bra{\phi}A^\dagger\ket{\psi}$ |
+| Notación                           | Descripción                                                                                                                                                                                                                                                                                                                                         |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| $z^*$                              | Conjugado complejo del número complejo $z$.<br>$(1 + i)^* = 1 - i$                                                                                                                                                                                                                                                                                  |
+| $\ket{\psi}$                       | Vector. También conocido como *ket*. Vector de estado cuántico en el espacio de Hilbert.<br><br>$$\ket{\psi} = \left[\begin{array}{c} a \\ b \end{array}\right]$$                                                                                                                                                                                   |
+| $\bra{\psi}$                       | Dual (conjugado transpuesto) de $\ket{\psi}$. También conocido como *bra*.<br>$$\bra{\psi} = \ket{\psi}^\dagger = \left[\begin{array}{cc} a^* & b^* \end{array}\right]$$                                                                                                                                                                            |
+| $\braket{\varphi\|\psi}$           | Producto interno  "bra-ket", entre los vectores $\ket{\varphi}$ y $\ket{\psi}$. Generalización del producto escalar al espacio complejo de Hilbert. **Devuelve un escalar.**<br><br>Norma de $\ket{\psi}$ al cuadrado: $\braket{\psi\|\psi} = \|\psi\|^2$<br>Regla de Born: $P(\ket{i}) = \|\braket{i\|\psi}\|^2$ (probabilidad de medir $\ket{i}$) |
+| $\ket{\varphi} \otimes \ket{\psi}$ | Producto tensorial de $\ket{\varphi}$ y $\ket{\psi}$. Operación fundamental para sistemas cuánticos compuestos (múltiples qubits).<br><br>Notación abreviada: $\ket{\varphi}\ket{\psi}$ o $\ket{\varphi\psi}$<br>Adjunto: $(\ket{\psi} \otimes \ket{\phi})^\dagger = \bra{\psi} \otimes \bra{\phi}$                                                 |
+| $\ket{\varphi}\bra{\psi}$          | Operador proyección (ket-bra) o *producto externo*. **Devuelve una matriz.**<br><br>Completitud: $\sum_i \ket{i}\bra{i} = \mathbb{I}$ (base ortonormal $\{\ket{i}\}$)<br>Matriz de densidad: $\rho = \ket{\psi}\bra{\psi}$                                                                                                                          |
+| $A^*$                              | Conjugado complejo de la matriz $A$.                                                                                                                                                                                                                                                                                                                |
+| $A^T$                              | Transpuesta de la matriz $A$.                                                                                                                                                                                                                                                                                                                       |
+| $A^\dagger$                        | Conjugado hermítico o adjunto de la matriz $A$, $A^\dagger = (A^T)^*$. Extensión al espacio complejo de la transpuesta.<br><br>$$\left[\begin{array}{cc} a & b \\ c & d \end{array}\right]^\dagger = \left[\begin{array}{cc} a^* & c^* \\ b^* & d^* \end{array}\right]$$                                                                            |
+| $\bra{\varphi}A\ket{\psi}$         | Producto interno entre $\ket{\varphi}$ y $A\ket{\psi}$.<br>Equivalentemente: producto interno entre $A^\dagger\ket{\varphi}$ y $\ket{\psi}$.<br><br>Propiedad: $(\bra{\psi}A\ket{\phi})^* = \bra{\phi}A^\dagger\ket{\psi}$                                                                                                                          |
 
 **Basado en Nielsen & Chuang, Figura 2.1.**
 

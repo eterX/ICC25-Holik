@@ -19,9 +19,7 @@ Se profundizó en la interpretación frecuentista de la probabilidad, esencial p
 
 El concepto central de la clase fue el de **transformación lineal**, formalizado como un mapeo entre espacios vectoriales que preserva la estructura lineal. Se demostró que toda transformación lineal puede representarse matricialmente y que, conversely, toda matriz define una transformación lineal mediante el producto matriz-vector. Esta correspondencia biunívoca es fundamental porque las compuertas cuánticas son precisamente transformaciones lineales unitarias actuando sobre el espacio de estados de los qubits.
 
-Se introdujeron las primeras compuertas cuánticas: la compuerta de Hadamard (H) y la compuerta NOT cuántica (X, también llamada Pauli-X). La comp
-
-uerta H es especialmente relevante porque genera superposiciones balanceadas de los estados base |0⟩ y |1⟩, siendo un elemento fundamental en la mayoría de los algoritmos cuánticos. Se demostró que H² = I (la identidad), lo que implica que H es su propia inversa—una propiedad que será crucial en el análisis de circuitos cuánticos.
+Se introdujeron las primeras compuertas cuánticas: la compuerta de Hadamard (H) y la compuerta NOT cuántica (X, también llamada Pauli-X). La compuerta H es especialmente relevante porque genera superposiciones balanceadas de los estados base |0⟩ y |1⟩, siendo un elemento fundamental en la mayoría de los algoritmos cuánticos. Se demostró que H² = I (la identidad), lo que implica que H es su propia inversa—una propiedad que será crucial en el análisis de circuitos cuánticos.
 
 La clase culminó introduciendo la notación de circuitos cuánticos, donde las líneas horizontales representan qubits y las cajas etiquetadas representan compuertas. Esta notación gráfica será el lenguaje estándar para describir algoritmos cuánticos en el resto del curso.
 
@@ -60,7 +58,7 @@ donde $μ_z$ es la componente z del momento magnético y dB/dz es el gradiente d
 
 **Predicción Clásica:**
 - El momento magnético puede tener cualquier orientación en el espacio
-- El momento magnético toma valores continuos: $μ_z ∈ [-μ₀, +μ₀]$
+- El momento magnético toma valores continuos: $μ_z ∈ [-μ_₀, + μ_₀]$
 - **Patrón esperado:** Distribución continua en la pantalla (mancha uniforme)
 
 **Resultado Experimental:**
@@ -83,19 +81,29 @@ donde $μ_z$ es la componente z del momento magnético y dB/dz es el gradiente d
 
 #### 1.3 Representación Matemática
 
-**Estados base (notación física):**
+**Estados base (notación física, de [[_Teoria.d/Algebra#Notación de Dirac|Dirac]])**
 - Spin arriba en dirección z: $|↑⟩_z$ o $|up⟩_z$
 - Spin abajo en dirección z: $|↓⟩_z$ o $|down⟩_z$
 
 **Estados base (notación computacional):**
-- |0⟩ = (1, 0)ᵀ  = $\ket{↑}_z$ — spin arriba
-- |1⟩ = (0, 1)ᵀ  = $\ket{↓}_z$ — spin abajo
+- |0⟩ = (1, 0)ᵀ  = $\ket{↑}_z$ — spin arriba (medido con operador  $\sigma_z$)
+- |1⟩ = (0, 1)ᵀ  = $\ket{↓}_z$ — spin abajo (medido con operador en $\sigma_z$)
 
 siendo vectores, si le agregamos producto interno, obtenemos un *Espacio de Estados de Hilbert* ℂ² (espacio vectorial complejo de dimensión 2)
 
 >[!tip] para no confundir |0⟩ con |1⟩, recordar las columnas de $\mathbb{I}$:
+> $\mathbb{I}=\left[\begin{matrix}1 & 0 \\ 0 & 1\end{matrix}\right]$
 
-$\mathbb{I}=\left[\begin{matrix}1 & 0 \\ 0 & 1\end{matrix}\right]$
+
+
+
+
+
+El docente repasa (otra vez) números complejos:
+![](clase3-complejos.png)
+>[!note] ver [[_Teoria.d/Algebra#Números Complejos (Escalares del Espacio Vectorial)]]
+
+la referencia al producto tensiorial, viene de otra explicación. Ver  6.3 Composición Paralela (Producto Tensorial)
 
 
 **Estado general:**
@@ -108,15 +116,26 @@ Cuando medimos en el eje $\hat{z}$, es decir, con el operador $\sigma_z$:
 Solo obtendremos  $\ket{↑}_z$ o  $\ket{↑}_z$ , a pesar de que el estado en $F$ sea una superposición, $\alpha \ket{↑} + \beta \ket{↓}$. Y los obtendremos con probabilidades P dadas por la Regla de Born: $P(↑) = |{\alpha}|^2$ y  $P(↓)=|\beta|^2$ (recordar q son escalares complejos de un espacio de Hilbert).
 
 
-#### 1.4 Dependencia Contextual: Rotación del Imán
+#### 1.4 Dependencia Contextual: Rotación del Imán (M)
 
-**Concepto crucial:** Si se rota el imán un ángulo θ respecto a la dirección $\hat{z}$, se obtiene una nueva base de medición. Las probabilidades de obtener "arriba" o "abajo" en la nueva dirección dependen de θ y del estado inicial.
+**Concepto crucial:** Si se rota el imán un ángulo θ respecto a la dirección $\hat{z}$, se usará una nueva base de medición. Las probabilidades de obtener "arriba" o "abajo" cambian en la nueva dirección, y dependen tanto de θ como del estado inicial $\ket{\psi}$.
 ![[stern_rotado.png]]
 **Ejemplos de  "contextos de experimentación":**
-- Preparación inicial: |ψ⟩ = (1/√2)|0⟩ + (1/√2)|1⟩ (superposición balanceada)
+- Preparación inicial: |ψ⟩ = (1/√2)|0⟩ + (1/√2)|1⟩ 
+	- superposición balanceada
 - Medición en dirección z: $P^z(↑) = P^z(↓) = 50\%$
-- Medición en dirección x (θ = 90°): Probabilidades diferentes
+	- la superposición balanceada inicial se hace evidente porque medimos en la misma base
+- Medición en dirección $\hat{x}$
+	- θ = 90°. ahora medimos con el operador $\sigma_x$
+	- Probabilidades diferentes
 - Medición en dirección θ arbitraria: $P^θ(↑) = P(↑_θ) = P_θ(↑) = |⟨↑_θ|ψ⟩|²$ (regla de Born)
+
+del pizarrón:
+![](clase3-medicion_inicial.png)
+
+con sucesivas mediciones, en otros contextos:
+![](clase3-mediciones_sucesivas.png)
+
 
 **Filosofía cuántica:**
 > "Los resultados de experimentos que no se hicieron no tienen resultados."  
@@ -130,7 +149,7 @@ Esta frase encapsula el carácter contextual de la mecánica cuántica: pregunta
 
 ---
 
-### 2. Interpretación Frecuentista de la Probabilidad
+### 2. Interpretación Frecuentista de la Probabilidad Clásica
 
 > **Referencia a Clase 2:** Retoma y profundiza la discusión sobre [[ICC25-Holik-Clase2-Resumen#Probabilidad en Física Cuántica|probabilidad cuántica]] iniciada en la clase anterior.
 
@@ -207,6 +226,9 @@ donde N es el número total de lanzamientos.
 
 ![[clase3-diapo39.png]]
 
+>[!note] ver nota [[_Teoria/Algebra#Probabilidad]]
+
+
 **Referencias bibliográficas:**
 - **Nielsen & Chuang:** Sección 2.2.3 "Quantum measurement" (págs. 84-92) - Postulado de medición
 - **Interpretación de la Mecánica Cuántica** - Material complementario del IFLP
@@ -217,6 +239,8 @@ donde N es el número total de lanzamientos.
 ### 3. Transformaciones Lineales
 
 > **Fundamento matemático:** Este es el concepto algebraico central que subyace a toda la dinámica cuántica y las operaciones computacionales cuánticas.
+
+>[!note] ver [[_Teoria.d/Algebra#Transformaciones Lineales]]
 
 #### 3.1 Definición Formal
 
@@ -282,9 +306,9 @@ $$M = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$$
 $$f\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} ax + by \\ cx + dy \end{pmatrix}$$
 
 **Composición de transformaciones:**
-Si f: U → V y g: V → W son lineales con matrices M_f y M_g, entonces:
-- La composición g ∘ f tiene matriz M_g · M_f (producto matricial)
-- Orden importante: (g ∘ f)(v) = g(f(v)) ⟺ M_g M_f v
+Si f: U → V y g: V → W son lineales con matrices $M_f$ y $M_g$, entonces:
+- La composición g ∘ f tiene matriz $M_g · M_f$ (producto matricial)
+- Orden importante: $(g ∘ f)(v) = g(f(v)) ⟺ M_g M_f v$
 
 **Referencias bibliográficas:**
 - **Nielsen & Chuang:** 
@@ -300,15 +324,15 @@ Si f: U → V y g: V → W son lineales con matrices M_f y M_g, entonces:
 $$R_\theta = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$$
 
 **Verificación de linealidad:**
-- R_θ(v + w) = R_θ(v) + R_θ(w) ✓
-- R_θ(αv) = αR_θ(v) ✓
+- $R_θ(v + w) = R_θ(v) + R_θ(w)$ ✓
+- $R_θ(αv) = αR_θ(v)$ ✓
 
 **Propiedades:**
-- R_θ · R_φ = R_(θ+φ) (rotaciones se componen sumando ángulos)
-- R_(-θ) = R_θ⁻¹ (inversa = rotación opuesta)
-- R_θᵀ R_θ = I (matriz ortogonal, preserva norma)
+- $R_θ · R_φ = R_(θ+φ)$ (rotaciones se componen sumando ángulos)
+- $R_(-θ) = R_θ⁻¹$ (inversa = rotación opuesta)
+- $R_θᵀ R_θ = \mathbb{I}$ (matriz ortogonal, preserva norma)
 
-**Significado físico:** Cualquier vector v rotado θ grados resulta en R_θ v.
+**Significado físico:** Cualquier vector $v$ rotado θ grados resulta en $R_θ(v)$.
 
 **Ejemplo numérico (θ = 45°):**
 
@@ -324,7 +348,7 @@ El vector (1,0) se rota a (1/√2, 1/√2), que efectivamente forma 45° con el 
 
 ### 4. Compuertas Cuánticas: Hadamard (H)
 
-> **Concepto fundamental:** Las compuertas cuánticas son transformaciones lineales unitarias que operan sobre qubits. Son el análogo cuántico de las compuertas lógicas clásicas (AND, OR, NOT, etc.).
+> **Concepto fundamental:** Las compuertas cuánticas son transformaciones lineales unitarias que operan sobre qubits. Son el análogo cuántico de las compuertas lógicas clásicas (AND, OR, NOT).
 
 #### 4.1 Definición de la Compuerta Hadamard
 
@@ -346,30 +370,30 @@ donde |+⟩ y |-⟩ forman la **base de Hadamard** (también llamada base X o ba
 
 **Cálculo explícito:**
 
-$$H\begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix}$$
+$$H\ket{0} = H\begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \ket{+}$$
 
-$$H\begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix}$$
-
+$$H\ket{1} = H\begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix} = \ket{-}$$
+![[clase3-hadamard.png]]
 #### 4.2 Propiedades Algebraicas de H
 
 **1. Auto-inversión:**
 
-$$H^2 = H \cdot H = I$$
+$$H^2 = H \cdot H = \mathbb{I}$$
 
-donde I es la matriz identidad. Por lo tanto: H = H⁻¹ (H es su propia inversa).
+donde $\mathbb{I}$ es la matriz identidad. Por lo tanto: H = H⁻¹ (H es su propia inversa).
 
 **Demostración:**
 
 $$H^2 = \frac{1}{2} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$$
 
-$$= \frac{1}{2} \begin{pmatrix} 1+1 & 1-1 \\ 1-1 & 1+1 \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = I$$
+$$= \frac{1}{2} \begin{pmatrix} 1+1 & 1-1 \\ 1-1 & 1+1 \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \mathbb{I}$$
 
 **Implicancia:** Aplicar H dos veces consecutivas devuelve el estado original:
 $$H(H|\psi\rangle) = |\psi\rangle$$
 
 **2. Unitariedad:**
 
-$$H^\dagger H = I$$
+$$H^\dagger H = \mathbb{I}$$
 
 donde H† es la adjunta (conjugada transpuesta) de H.
 
@@ -673,15 +697,19 @@ Matriz 4×4 actuando sobre ℂ⁴ = ℂ² ⊗ ℂ².
 
 ### 7. Evolución Temporal y Operadores Unitarios
 
-#### 7.1 Ecuación de Schrödinger (Mención Formal)
+#### 7.1 Ecuación de Schrödinger
+
+>[!note] 
+>ver [[Fisica#Postulado2 Evolución]]
+>ver [[Fisica#Ecuación de Schrödinger]]
 
 **Forma dependiente del tiempo:**
 
-$$i\hbar \frac{\partial}{\partial t}|\psi(t)\rangle = \hat{H}|\psi(t)\rangle$$
+$$i\hbar \frac{\partial}{\partial t}|\psi(t)\rangle = {H}|\psi(t)\rangle \tag{NC 2.86}$$
 
 donde:
 - ħ = h/(2π) ≈ 1.055 × 10⁻³⁴ J·s (constante de Planck reducida)
-- Ĥ: operador Hamiltoniano (energía total del sistema)
+- H: operador Hamiltoniano (energía total del sistema)
 - i: unidad imaginaria
 
 **Solución formal:**
@@ -704,26 +732,26 @@ donde $\hat{U}(t) = e^{-i\hat{H}t/\hbar}$ es el operador de evolución temporal.
 
 **En computadora cuántica:**
 - No se implementa evolución continua directamente
-- Se aplican pulsos discretos (láseres, microondas, voltajes) que efectúan transformaciones U_i
+- Se aplican pulsos discretos (láseres, microondas, voltajes) que efectúan transformaciones $U_i$
 - Cada pulso implementa una compuerta específica
 
 **Hamiltoniano efectivo:**
 Cada compuerta U corresponde a evolucionar con algún Hamiltoniano H durante tiempo τ:
 $$U = e^{-iH\tau/\hbar}$$
+**Diferencia entre compuerta y medición:**
+- **Evolución unitaria:** Reversible, determinista en |ψ⟩, preserva superposición
+- **Medición:** Irreversible, probabilística, colapsa superposición
 
 **Ejemplos:**
 - **Hadamard:** No tiene Hamiltoniano simple de una partícula; se construye mediante secuencias
 - **Rotaciones:** $R_z(\theta) = e^{-i\theta Z/2}$ (rotación alrededor eje z de ángulo θ)
-- **NOT (X):** Caso límite de rotación π alrededor eje x
+- **NOT o X:** Caso límite de rotación π alrededor eje x
 
 **Ingeniería de Hamiltonianos:**
 - Campo activo de investigación en QC
 - Cómo diseñar secuencias de pulsos para implementar compuertas deseadas
 - Trade-offs entre fidelidad, tiempo de operación y errores
 
-**Diferencia con medición:**
-- **Evolución unitaria:** Reversible, determinista en |ψ⟩, preserva superposición
-- **Medición:** Irreversible, probabilística, colapsa superposición
 
 **Referencias bibliográficas:**
 - **Nielsen & Chuang:** 
@@ -742,18 +770,18 @@ $$U = e^{-iH\tau/\hbar}$$
 mindmap
   root((Transformaciones<br/>Lineales))
     Definición Formal
-      f(αv+βw) = αf(v)+βf(w)
+      ["f(αv+βw) = αf(v)+βf(w)"]
       Aditividad
       Homogeneidad
       Dominio y Codominio
     Representación Matricial
       Matriz asociada M
       Columnas: imágenes de base
-      f(v) = Mv producto matriz-vector
+      ["f(v) = Mv producto matriz-vector"]
       Composición: producto matricial
     Propiedades Especiales
       Unitarias
-        U†U = I
+        ["U†U = I"]
         Preservan norma
         Reversibles
       Hermíticas
@@ -803,7 +831,7 @@ mindmap
         Indeterminismo ontológico
         Teoremas no-go
       Interpretación Frecuentista
-        P = lim(N→∞) freq
+        ["P = lim(N→∞) freq"]
         Convergencia estadística
         Verificación experimental
       Regla de Born
@@ -820,10 +848,10 @@ mindmap
       Medición: proyectiva
       Composición: producto tensorial
     Spin y Momento Angular
-      Cuantización J = ℏ√(j(j+1))
+      ["Cuantización J = ℏ√(j(j+1))"]
       Proyecciones m_j
       Matrices de Pauli
-      Representación SU(2)
+      ["Representación SU(2)"]
 ```
 
 ### Mapa Conceptual: Computación Cuántica
@@ -834,8 +862,8 @@ mindmap
     Qubits
       Espacio ℂ²
       Base computacional
-        |0⟩ = (1,0)ᵀ
-        |1⟩ = (0,1)ᵀ
+        ["|0⟩ = (1,0)ᵀ"]
+        ["|1⟩ = (0,1)ᵀ"]
       Superposición
         α|0⟩ + β|1⟩
         |α|²+|β|² = 1
@@ -852,7 +880,7 @@ mindmap
         Z: phase flip
         Y = iXZ
       Rotaciones
-        R_x(θ), R_y(θ), R_z(θ)
+        ["R_x(θ), R_y(θ), R_z(θ)"]
         Parametrizadas
       Fase
         S: π/2
@@ -896,6 +924,7 @@ mindmap
       Simulación Cuántica
         Química, materiales
 ```
+
 
 ---
 
@@ -992,7 +1021,7 @@ mindmap
 
 #### Kitaev, A. Yu., Shen, A. H., & Vyalyi, M. N. (2002). *Classical and Quantum Computation*
 
-**Ubicación:** `_Bibliografia/Alexei Yu. Kitaev/Classical and Quantum Computation (3)/`
+**Ubicación:** `_Bibliografia.d/Alexei Yu. Kitaev/Classical and Quantum Computation (3)/`
 
 **Secciones relevantes:**
 
@@ -1064,8 +1093,8 @@ mindmap
   - Ejercicios guiados con soluciones
 
 **Actividades recomendadas:**
-1. Construir circuito |0⟩→[H]→medición, ejecutar 1024 veces, verificar ~512 ceros y ~512 unos
-2. Construir circuito |0⟩→[H]→[H]→medición, verificar que regresa a |0⟩ con alta probabilidad
+1. Construir circuito `|0⟩→[H]→medición`, ejecutar 1024 veces, verificar ~512 ceros y ~512 unos
+2. Construir circuito `|0⟩→[H]→[H]→medición`, verificar que regresa a |0⟩ con alta probabilidad
 3. Experimentar con diferentes secuencias de H, X, Z y predecir resultados antes de simular
 
 ---
@@ -1187,7 +1216,7 @@ Algoritmo cuántico           →   Composición de operadores        →   Circ
    - **Ejercicio:** Dada f: ℂ² → ℂ² con f(|0⟩) = |+⟩ y f(|1⟩) = |-⟩, hallar matriz de f
 
 4. **Compuerta de Hadamard:**
-   - Matriz H = (1/√2)[[1,1],[1,-1]]
+   - Matriz H = `(1/√2)[[1,1],[1,-1]]`
    - Efecto sobre base: H|0⟩ = |+⟩, H|1⟩ = |-⟩
    - Propiedad H² = I (auto-inversa)
    - Unitariedad y hermiticidad

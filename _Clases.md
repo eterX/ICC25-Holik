@@ -51,7 +51,7 @@ Tel: 2066-1958 (int. 870)
 # 2025-10-28 clase3
 
 - [x] resumir 
-- [ ] Revisar [[.Clases.d/ICC25-Holik-Clase3-Resumen|Resumen]]
+- [x] Revisar [[.Clases.d/ICC25-Holik-Clase3-Resumen|Resumen]]
 
 ## tareas para próxima clase
 
