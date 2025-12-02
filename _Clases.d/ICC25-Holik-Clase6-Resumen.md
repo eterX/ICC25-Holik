@@ -123,7 +123,7 @@ $$H^{\otimes n}|y\rangle = \frac{1}{\sqrt{2^n}}\sum_{x \in \{0,1\}^n}(-1)^{x \cd
 donde $x \cdot y$ es el producto escalar módulo 2.
 
 ver [[Computacion#Suma Módulo 2]]: ![[Computacion#Suma Módulo 2]]
->[!tip] "producto escalar módulo 2" no es lo mismo el producto interno en $\mathbb{C}$
+>[!tip] "producto escalar módulo 2" no es lo mismo el producto interno en $\mathbb{C}$, módulo 2.
 
  - producto interno  en $\mathbb{C}$: $$\langle x | y \rangle = \sum_{i=1}^{n} x_i^* y_i \in \mathbb{C}$$
 - Producto escalar módulo 2 (notación: $x \cdot y$): $$x \cdot y = \sum_{i=1}^{n} x_i y_i \pmod{2} \in {0, 1}$$
