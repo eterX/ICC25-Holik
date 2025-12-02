@@ -336,3 +336,34 @@ $$P(B) = \sum_i P(B|A_i) P(A_i)$$
 donde $\{A_i\}$ es una partición del espacio muestral.
 
 ---
+
+## Trigonometría
+
+## identidades
+
+- $e^{i\theta}=cos(\theta)+isen(\theta)$
+
+##  matriz de rotación
+
+**Rotación por ángulo θ en sentido antihorario:**
+
+$$R_\theta = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$$
+
+**Verificación de linealidad:**
+- $R_θ(v + w) = R_θ(v) + R_θ(w)$ ✓
+- $R_θ(αv) = αR_θ(v)$ ✓
+
+**Propiedades:**
+- $R_θ · R_φ = R_(θ+φ)$ (rotaciones se componen sumando ángulos)
+- $R_(-θ) = R_θ⁻¹$ (inversa = rotación opuesta)
+- $R_θᵀ R_θ = \mathbb{I}$ (matriz ortogonal, preserva norma)
+
+**Significado físico:** Cualquier vector $v$ rotado θ grados resulta en $R_θ(v)$.
+
+**Ejemplo numérico (θ = 45°):**
+
+$$R_{45°} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & -1 \\ 1 & 1 \end{pmatrix}$$
+
+$$R_{45°} \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix}$$
+
+El vector (1,0) se rota a (1/√2, 1/√2), que efectivamente forma 45° con el eje x.

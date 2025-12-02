@@ -9,6 +9,7 @@ Educación:** Crear materiales didácticos, cursos online, tutoriales
 
 ---
 
+>[!tip] ver la [[Holik_Unahur_Curso_05_2025.pdf|presentación en PDF]] de la clase
 ## Referencias Cruzadas a Clases Anteriores
 
 ### Integración con Clase 1

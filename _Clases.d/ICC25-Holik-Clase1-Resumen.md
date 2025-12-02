@@ -5,6 +5,7 @@
 
 ---
 
+>[!tip] ver la [[Holik_Unahur_Curso_01_2025.pdf|presentación en PDF]] de la clase
 ## Resumen Ejecutivo
 
 La clase inaugural del curso "Introducción a la Computación Cuántica y Tecnologías Cuánticas" presentó un panorama comprehensivo del campo, sus motivaciones, desafíos y estado actual del desarrollo tecnológico. El profesor Holik estableció que el objetivo central del curso es entender qué son las tecnologías cuánticas y aprender protocolos de información cuántica y algoritmos cuánticos, utilizando Python y plataformas como Qiskit y Amazon Braket.

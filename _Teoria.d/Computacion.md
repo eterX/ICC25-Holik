@@ -7,6 +7,15 @@ aliases:
 
 # Computación Clásica
 
+## Suma Módulo 2
+
+$$\begin{align}
+0 \oplus 0 &= 0 \\
+0 \oplus 1 &= 1 \\
+1 \oplus 0 &= 1 \\
+1 \oplus 1 &= 0
+\end{align}$$
+
 ## Máquina de Turing
 
 

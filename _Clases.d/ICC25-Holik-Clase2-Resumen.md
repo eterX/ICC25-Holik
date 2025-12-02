@@ -9,6 +9,7 @@
 
 ---
 
+>[!tip] ver la [[Holik_Unahur_Curso_02_2025.pdf|presentación en PDF]] de la clase
 ## Resumen Ejecutivo
 
 La segunda clase del curso constituye una introducción fundamental al formalismo matemático de la mecánica cuántica, con énfasis particular en la teoría de espacios vectoriales complejos. Se inició la sesión motivando la necesidad del álgebra lineal mediante el experimento de la doble rendija, ilustrando el comportamiento contraintuitivo de los sistemas cuánticos y la emergencia de patrones de interferencia. Posteriormente, se desarrolló sistemáticamente la teoría de espacios vectoriales, comenzando con espacios reales (ℝⁿ) para luego extender los conceptos a espacios complejos (ℂⁿ), que constituyen el marco matemático apropiado para la descripción de estados cuánticos.

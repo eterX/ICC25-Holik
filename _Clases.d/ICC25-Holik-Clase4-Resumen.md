@@ -6,6 +6,7 @@
 
 ---
 
+>[!tip] ver la [[Holik_Unahur_Curso_04_2025.pdf|presentación en PDF]] de la clase
 ## Observaciones Generales
 
 **[¶1]** Los primeros 28 minutos fueron un tutorial sobre Jupyter Notebooks y Python (Leandro Batlle, Fundación Sadosky), enfocado en instalación de Anaconda y entornos virtuales. Este contenido no es específicamente sobre computación cuántica.

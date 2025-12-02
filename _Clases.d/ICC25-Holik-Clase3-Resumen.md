@@ -9,6 +9,7 @@
 
 ---
 
+>[!tip] ver la [[Holik_Unahur_Curso_03_2025.pdf|presentación en PDF]] de la clase
 ## Resumen Ejecutivo
 
 La tercera clase marca un punto de inflexión en el curso, estableciendo el puente entre el formalismo matemático abstracto desarrollado en las clases anteriores y las aplicaciones concretas en computación cuántica. El eje central de la sesión fue comprender cómo las transformaciones lineales operan sobre espacios vectoriales complejos y cómo estas se materializan en compuertas lógicas cuánticas.
@@ -319,28 +320,7 @@ Si f: U → V y g: V → W son lineales con matrices $M_f$ y $M_g$, entonces:
 
 #### 3.4 Ejemplo: Matriz de Rotación en ℝ²
 
-**Rotación por ángulo θ en sentido antihorario:**
-
-$$R_\theta = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$$
-
-**Verificación de linealidad:**
-- $R_θ(v + w) = R_θ(v) + R_θ(w)$ ✓
-- $R_θ(αv) = αR_θ(v)$ ✓
-
-**Propiedades:**
-- $R_θ · R_φ = R_(θ+φ)$ (rotaciones se componen sumando ángulos)
-- $R_(-θ) = R_θ⁻¹$ (inversa = rotación opuesta)
-- $R_θᵀ R_θ = \mathbb{I}$ (matriz ortogonal, preserva norma)
-
-**Significado físico:** Cualquier vector $v$ rotado θ grados resulta en $R_θ(v)$.
-
-**Ejemplo numérico (θ = 45°):**
-
-$$R_{45°} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & -1 \\ 1 & 1 \end{pmatrix}$$
-
-$$R_{45°} \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix}$$
-
-El vector (1,0) se rota a (1/√2, 1/√2), que efectivamente forma 45° con el eje x.
+ver [[Algebra#matriz de rotación]], ![[Algebra#matriz de rotación]]
 
 **Conexión cuántica:** Las rotaciones en el espacio de Bloch (representación geométrica del qubit) son ejemplos de operadores cuánticos unitarios.
 
