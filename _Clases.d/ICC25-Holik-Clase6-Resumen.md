@@ -127,7 +127,7 @@ ver [[Computacion#Suma Módulo 2]]: ![[Computacion#Suma Módulo 2]]
 
  - producto interno  en $\mathbb{C}$: $$\langle x | y \rangle = \sum_{i=1}^{n} x_i^* y_i \in \mathbb{C}$$
 - Producto escalar módulo 2 (notación: $x \cdot y$): $$x \cdot y = \sum_{i=1}^{n} x_i y_i \pmod{2} \in {0, 1}$$
-donde $x, y \in {0,1}^n$ son strings de bits. **La diferencia clave:** en el contexto de Deutsch-Jozsa, cuando escribimos: $$(-1)^{x \cdot y}$$
+donde $x, y \in {0,1}^n$ son strings de bits. **La diferencia clave:** en el [[#3. Algoritmo de Deutsch-Jozsa|contexto de Deutsch-Jozsa]], cuando escribimos: $$(-1)^{x \cdot y}$$
 el "$\cdot$" **NO es el producto interno de Dirac** $\langle x | y \rangle$. Es una operación completamente distinta:
 
 1. **Dominio**: Opera sobre strings clásicos de bits, no sobre vectores complejos
@@ -218,7 +218,13 @@ $$|\psi_1\rangle = \frac{1}{\sqrt{2^{n+1}}}\sum_{x}|x\rangle(|0\rangle - |1\rang
 
 3. **Oráculo $U_f$**: $U_f|x\rangle|y\rangle = |x\rangle|y \oplus f(x)\rangle$
 
+![[deutsch-oraculo.png]]
+
+
+
 $$|\psi_2\rangle = \frac{1}{\sqrt{2^{n+1}}}\sum_{x}(-1)^{f(x)}|x\rangle(|0\rangle - |1\rangle)$$
+![[deutsch-menos1alaefe.png]]
+(1) probado en clase. Probar (2)
 
 4. **Hadamard a los primeros $n$ qubits**:
 

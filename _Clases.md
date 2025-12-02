@@ -87,7 +87,7 @@ Tel: 2066-1958 (int. 870)
 
 - [x]  ausente
 - [x] resumir 
-- [ ] Revisar [[.Clases.d/ICC25-Holik-Clase5-Resumen|Resumen]]
+- [x] Revisar [[.Clases.d/ICC25-Holik-Clase5-Resumen|Resumen]]
 
 # 2025-11-25 clase7
 
