@@ -84,7 +84,119 @@ $$= \sum_{i} (BA)_{ik} \ket{x_i} = (BA)\ket{v}$$
 
 donde $(BA)_{ik} = \sum_{j} B_{ij} A_{jk}$ es el producto matricial estándar.
 
+## determinante de una matriz (ejemplo observables)
 
+
+
+El **determinante** de una matriz cuadrada $A$ de dimensión $n \times n$ es un escalar que codifica información geométrica y algebraica fundamental sobre la transformación lineal que representa. En computación cuántica, el determinante resulta particularmente relevante al estudiar **observables** (operadores hermíticos) y **operadores unitarios**.
+
+### Definición y Propiedades Generales
+
+Para una matriz $2 \times 2$:
+
+$$\det(A) = \det\begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc$$
+
+**Propiedades geométricas:**
+- El valor absoluto del determinante representa el **factor de escalamiento del volumen** (o área en 2D) bajo la transformación lineal
+- Si $|\det(A)| = 1$, la transformación preserva volúmenes
+- Si $\det(A) = 0$, la transformación colapsa el espacio a una dimensión menor (la matriz no es invertible)
+
+**Propiedades algebraicas fundamentales:**
+1. $\det(AB) = \det(A)\det(B)$ (multiplicatividad)
+2. $\det(A^T) = \det(A)$ (invarianza bajo transposición)
+3. $\det(A^{-1}) = \frac{1}{\det(A)}$ (si $A$ es invertible)
+4. $\det(\lambda A) = \lambda^n \det(A)$ (homogeneidad de grado $n$)
+
+### Determinante de Matrices Unitarias
+
+Los **operadores unitarios** (compuertas cuánticas) satisfacen $U^\dagger U = \mathbb{I}$, lo cual implica:
+
+$$\det(U^\dagger U) = \det(U^\dagger)\det(U) = \det(U)^* \det(U) = |\det(U)|^2 = \det(\mathbb{I}) = 1$$
+
+Por lo tanto:
+$$|\det(U)| = 1$$
+
+Esto significa que $\det(U) = e^{i\phi}$ para algún $\phi \in \mathbb{R}$ (el determinante está en el círculo unitario del plano complejo).
+
+**Interpretación física:** Las operaciones unitarias preservan la probabilidad total del sistema cuántico, y esta propiedad se refleja en que el determinante tiene módulo unitario.
+
+### Ejemplos con Observables Cuánticos
+
+Los **observables** en mecánica cuántica se representan mediante operadores hermíticos. Veamos el determinante de los operadores de Pauli, que son observables fundamentales:
+
+#### Matriz de Pauli $X$ (bit-flip)
+
+$$X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$$
+
+$$\det(X) = (0)(0) - (1)(1) = -1$$
+
+**Interpretación:** El determinante negativo indica que la transformación invierte la orientación del espacio (reflexión). Geométricamente, $X$ intercambia los estados $\ket{0}$ y $\ket{1}$, efectivamente reflejando el vector de Bloch respecto al eje $x$.
+
+#### Matriz de Pauli $Y$
+
+$$Y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}$$
+
+$$\det(Y) = (0)(0) - (-i)(i) = -i^2 = -(-1) = 1$$
+
+**Observación:** A pesar de tener entradas complejas, el determinante es **real positivo**. Esto es consistente con $Y$ siendo hermítica, pero no refleja inversión de orientación como $X$.
+
+#### Matriz de Pauli $Z$ (phase-flip)
+
+$$Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$$
+
+$$\det(Z) = (1)(-1) - (0)(0) = -1$$
+
+**Interpretación:** Similar a $X$, el determinante negativo indica inversión de orientación. Geométricamente, $Z$ invierte la fase del estado $\ket{1}$, reflejando el vector de Bloch respecto al plano ecuatorial.
+
+#### Compuerta de Hadamard
+
+$$H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$$
+
+$$\det(H) = \frac{1}{2}\left[(1)(-1) - (1)(1)\right] = \frac{1}{2}(-1 - 1) = -1$$
+
+**Observación importante:** Aunque $H$ tiene factor de normalización $\frac{1}{\sqrt{2}}$, su determinante es $-1$ (no $1$), indicando que invierte orientación. Sin embargo, $|det(H)| = 1$ confirma que es unitaria.
+
+#### Observable Arbitrario (Ejemplo Didáctico)
+
+Consideremos un observable hermítico general de $2 \times 2$:
+
+$$A = \begin{pmatrix} a & b + ic \\ b - ic & d \end{pmatrix}$$
+
+donde $a, b, c, d \in \mathbb{R}$ (garantizando que $A = A^\dagger$).
+
+$$\det(A) = ad - (b + ic)(b - ic) = ad - (b^2 + c^2)$$
+
+**Resultado:** El determinante de un observable hermítico es **siempre real** (consecuencia de que sus valores propios son reales).
+
+### Relación con Valores Propios
+
+Para cualquier matriz (incluyendo observables), el determinante es igual al **producto de sus valores propios**:
+
+$$\det(A) = \prod_{i=1}^{n} \lambda_i$$
+
+En el caso de observables cuánticos:
+- Los valores propios $\lambda_i$ son **reales** (por hermiticidad)
+- Por lo tanto, $\det(A) \in \mathbb{R}$
+- Los valores propios representan los posibles resultados de una medición
+
+**Ejemplo con $Z$:**
+
+Los valores propios de $Z$ son $\lambda_1 = 1$ y $\lambda_2 = -1$, entonces:
+$$\det(Z) = (1)(-1) = -1$$
+
+Esto confirma nuestro cálculo directo y muestra que el determinante codifica información espectral del observable.
+
+### Significado Físico
+
+En el contexto de la mecánica cuántica:
+
+1. **Para operadores unitarios** ($U$): $|\det(U)| = 1$ garantiza reversibilidad y conservación de la norma (probabilidad total).
+
+2. **Para observables** ($A = A^\dagger$): $\det(A) \in \mathbb{R}$ es una consecuencia de la realidad de los valores propios, y su magnitud puede indicar si el operador es invertible (mediciones no degeneradas).
+
+3. **Interpretación geométrica en la esfera de Bloch:** El determinante indica si una transformación preserva o invierte la orientación del espacio de estados. Operadores con $\det < 0$ (como $X, Z, H$) invierten quiralidad.
+
+**Conexión con la física:** El signo del determinante no afecta las probabilidades medibles (que dependen de $|\braket{\psi|\phi}|^2$), pero sí tiene relevancia en la clasificación topológica de operadores y en la teoría de representaciones de grupos cuánticos.
 ## Producto Externo (Outer Product) - Ket-Bra
 
 $$(\ket{w}\bra{v})(\ket{v'}) \equiv \ket{w}\braket{v|v'} = \braket{v|v'}\ket{w}$$

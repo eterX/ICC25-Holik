@@ -27,3 +27,10 @@ $$|\phi\rangle = \sqrt{\frac{2}{3}}\exp^{\frac{\pi}{3}}|0\rangle + \sqrt{\frac{1
 
   por la regla de Born: son 2/3 y 1/3 respectivamente (ignorando la fase global)
 
+¶11 Multiplying these matrices element by element:
+
+$$\rho = \begin{pmatrix} \sqrt{\frac{2}{3}} \cdot \sqrt{\frac{2}{3}} & \sqrt{\frac{2}{3}} \cdot \sqrt{\frac{1}{3}} \ \sqrt{\frac{1}{3}} \cdot \sqrt{\frac{2}{3}} & \sqrt{\frac{1}{3}} \cdot \sqrt{\frac{1}{3}} \end{pmatrix} = \begin{pmatrix} \frac{2}{3} & \sqrt{\frac{2}{9}} \ \sqrt{\frac{2}{9}} & \frac{1}{3} \end{pmatrix}$$
+
+¶12 Simplifying 29=23\sqrt{\frac{2}{9}} = \frac{\sqrt{2}}{3} 92​​=32​​, we get the final density matrix:
+
+$$\boxed{\rho = \begin{pmatrix} \frac{2}{3} & \frac{\sqrt{2}}{3} \\ \frac{\sqrt{2}}{3} & \frac{1}{3} \end{pmatrix}}$$
