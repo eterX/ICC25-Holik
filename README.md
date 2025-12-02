@@ -4,6 +4,10 @@
 > 👉 en la diaria, la nota mas jugosa es [[_Clases]] 👈
 
 
+ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️
+>[!note] ver EVALUACION del 02/dic/25 en [https://github.com/eterX/ICC25-Holik/blob/exal-251202/_Jupyter/Parcial_UNAHUR.ipynb](https://github.com/eterX/ICC25-Holik/blob/exal-251202/_Jupyter/Parcial_UNAHUR.ipynb)
+⚠️ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️ ⚠️
+
 ## Bienvenida
 
 
