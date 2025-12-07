@@ -156,6 +156,8 @@ $$\det(H) = \frac{1}{2}\left[(1)(-1) - (1)(1)\right] = \frac{1}{2}(-1 - 1) = -1$
 
 **Observación importante:** Aunque $H$ tiene factor de normalización $\frac{1}{\sqrt{2}}$, su determinante es $-1$ (no $1$), indicando que invierte orientación. Sin embargo, $|det(H)| = 1$ confirma que es unitaria.
 
+>[!tip] para recordar, las columnas son $\ket{+}$ y $\ket{-}$ (obvio pq $H\ket{0}=\ket{+}$ y $H\ket{1}=\ket{-}$)
+
 #### Observable Arbitrario (Ejemplo Didáctico)
 
 Consideremos un observable hermítico general de $2 \times 2$:
@@ -280,7 +282,7 @@ Un conjunto $V$ es un **espacio vectorial** sobre $\mathbb{C}$ si para todo $\ke
 
 ---
 
-## Producto Interno y Espacios de Hilbert
+## Producto Interno y ℋ (Espacios de Hilbert)
 
 El **dual** de $\ket{v}$ es un operador lineal del espacio vectorial a los números complejos, $V \to \mathbb{C}$:
 
@@ -307,7 +309,10 @@ $$\braket{\psi|\phi} = (\alpha^*\bra{0} + \beta^*\bra{1})(\gamma\ket{0} + \delta
 $$= (\alpha^*, \beta^*) \left[\begin{array}{c} \gamma \\ \delta \end{array}\right] = \alpha^*\gamma + \beta^*\delta$$
 
 **Ver Regla de Born:** La probabilidad de medir $\ket{\phi}$ dado que el sistema está en $\ket{\psi}$ es:
-$$P(\phi|\psi) = |\braket{\phi|\psi}|^2$$
+$$P_\psi(\phi) = P_\psi^{\phi}= P(\phi|\psi) = |\braket{\phi|\psi}|^2$$
+>[!tip] el orden del producto interno se lee como en la [[#probabilidad|probabilidad condicional]], pero nimporta el orden ya que "$\braket{|}$" es Hermitico (simetría conjugada), y solo importa el módulo. Es decir $P(\phi|\psi)=P(\psi|\phi)$
+
+
 
 ### Definición Axiomática del Producto Interno
 
@@ -325,7 +330,8 @@ Una función $(\cdot, \cdot)$ de $V \times V$ a $\mathbb{C}$ es un **producto in
 
 **Definiciones:**
 - **Espacio con producto interno:** Espacio vectorial equipado con un producto interno
-- **Espacio de Hilbert:** En espacios vectoriales complejos de **dimensión finita**, un espacio de Hilbert es _exactamente lo mismo_ que un espacio con producto interno
+- **Espacio de Hilbert:** En espacios vectoriales complejos de **dimensión finita**, un espacio de Hilbert es _exactamente lo mismo_ que un espacio con producto interno.
+- [ ] validar:  En dimensión infinita, además se pide que sea cerrado.
 
 ### Producto Interno en Base Ortonormal
 
@@ -377,20 +383,35 @@ $$\braket{v|w} = \left[\begin{array}{ccc} v_1^* & \cdots & v_n^* \end{array}\rig
 
 ---
 
-## Números Complejos (Escalares del Espacio Vectorial)
+## Complejos (escalares de ℋ)
 
+- $z =a+ib$
+- $i^2 = -1$
+- $a=\Re(z) ... (or \operatorname{Re}(z), Re(z))$
+- $b=\Im(z) (o  \operatorname{Im}(z))$
+- $e^z = 1 + z + \frac{z^2}{2!} + \frac{z^3}{3!} + \cdots$
+- [ ] verificar: $(e^a)^* = (cos(a) + i sen(a))^* = cos(a) - isen(a)) = cos(a) + isen(-a) = cos(-a) + isen(-a) = e^{-a}$
+- [ ] verificar: $∣c⋅z∣^2=(c⋅z)^∗(c⋅z)=c^∗z^∗cz=∣c∣^2∣z∣^2$
+- ver [List of Complex Variables Formulas Latex Code](https://www.deepnlp.org/blog/complex-variables-formulas-latex)
+
+```python
+>>> z=1+2j ; z.real , z.imag ,  z.conjugate(), z , z.conjugate()*z
+(1.0, 2.0, (1-2j), (1+2j), (5+0j))
+```
 ### Norma
 
-**Notación cartesiana:**
+**Notación cartesiana o algebraica**
 
-$$\|z\|^2 = z z^* = (a + ib)(a - ib) = a^2 + b^2$$
+
+$$\|z\|^2 = z z^* = z\overline{z}= (a + ib)(a - ib) = a^2 + b^2$$
 
 **Notación polar (forma de Euler):**
 
 $$z = a + ib = \|z\| e^{i\theta} = \|z\|\cos(\theta) + i\|z\|\sin(\theta)$$
+$(\cos \theta + i \sin \theta)^{n}=e^{in\theta}=\cos n\theta + i \sin n\theta$
 
 donde:
-- $\|z\| = \sqrt{a^2 + b^2}$ (módulo)
+- $\|z\| = \sqrt{a^2 + b^2}$ (módulo, en Inglés "modulus" y no "modulo")
 - $\theta = \arctan(b/a)$ (argumento o fase)
 
 ---
@@ -451,11 +472,17 @@ donde $\{A_i\}$ es una partición del espacio muestral.
 
 ## Trigonometría
 
-## identidades
+### identidades
 
-- $e^{i\theta}=cos(\theta)+isen(\theta)$
+- $e^{ix}=cos(x)+isen(x)$
+- $sen(-x) = -sen(x)$
+- $cos(−x)=cos(x)$
 
-##  matriz de rotación
+mas en [LibreText](https://espanol.libretexts.org/Bookshelves/Matematicas/Precalculo_y_Trigonometria/Libro:_Trigonometr%C3%ADa_Primaria_(Corral)/03:_Identidades/3.01:_Identidades_trigonom%C3%A9tricas_b%C3%A1sicas)
+
+- otra: $1/\sqrt{2} == \sqrt{2}/2$
+- 
+###  matriz de rotación
 
 **Rotación por ángulo θ en sentido antihorario:**
 

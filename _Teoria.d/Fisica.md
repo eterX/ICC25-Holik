@@ -22,16 +22,13 @@ Extracto de [[Algebra#Notación de Dirac]]: ![[Algebra#Notación de Dirac]]
 
 ### Postulado 1: Espacio de Estados
 
-**Enunciado (Inglés):**
-Associated to any isolated physical system is a complex vector space with inner product (that is, a Hilbert space) known as the _state space_ of the system. The system is completely described by its _state vector_, which is a unit vector in the system's state space.
 
-**Traducción:**
 A todo sistema físico aislado se le asocia un espacio vectorial complejo con producto interno (esto es, un espacio de Hilbert) conocido como el _espacio de estados_ del sistema. El sistema está completamente descripto por su _vector de estado_, que es un vector unitario en el espacio de estados del sistema.
 
 **Explicación:**
-- El espacio de estados es matemáticamente un [[Algebra#Espacios de Hilbert|espacio de Hilbert]] ℋ sobre ℂ
-- Para un qubit: ℋ = ℂ²
-- Para n qubits: ℋ = ℂ^(2ⁿ) (producto tensorial de n copias de ℂ²)
+- El espacio de estados es matemáticamente un [[Algebra#Espacios de Hilbert|espacio de Hilbert ℋ]] sobre ℂ
+- Para un qubit: $ℋ = \mathbb{C}^2$
+- Para n qubits: $ℋ = \mathbb{C}^{2ⁿ}$ (producto tensorial de $n$ copias de ℂ²)
 - Condición de normalización: ⟨ψ|ψ⟩ = 1
 
 **Referencias:**
@@ -42,17 +39,12 @@ A todo sistema físico aislado se le asocia un espacio vectorial complejo con pr
 
 ### Postulado 2: Evolución Temporal
 
-**Enunciado (Inglés):**
-The evolution of a _closed_ quantum system is described by a _unitary transformation_. That is, the state |_ψ_〉 of the system at time $t_1$ is related to the state |_ψ′_〉 of the system at time $t_2$ by a unitary operator $U$ which depends only on the times $t_1$ and $t_2$,
-$$|\psi'\rangle = U|\psi\rangle \tag{NC 2.84}$$
-
-**Traducción:**
 La evolución de un sistema cuántico _cerrado_ está descripta por una _transformación unitaria_. Esto es, el estado |_ψ_〉 del sistema en el tiempo $t_1$ está relacionado con el estado |_ψ′_〉 del sistema en el tiempo $t_2$ mediante un operador unitario $U$ que depende únicamente de los tiempos $t_1$ y $t_2$,
 $$|\psi'\rangle = U|\psi\rangle \tag{NC 2.84}$$
 
 **Explicación:**
 - Operador unitario: $U^\dagger U = U U^\dagger = I$
-- Preserva el producto interno: ⟨ψ|φ⟩ = ⟨Uψ|Uφ⟩
+- Preserva el producto interno: $\braket{ψ|φ} = \bra{U}ψ\ket{U_φ}$
 - Conserva la normalización: ||ψ|| = ||Uψ||
 - La evolución es reversible: $U^{-1} = U^\dagger$
 
@@ -96,11 +88,7 @@ donde $\hat{U}(t) = e^{-i\hat{H}t/\hbar}$ es el operador de evolución temporal.
 
 ### Postulado 3: Medición Cuántica
 
-**Enunciado (Inglés):**
-Quantum measurements are described by a collection $\{M_m\}$ of _measurement operators_. These are operators acting on the state space of the system being measured. The index _m_ refers to the measurement outcomes that may occur in the experiment. If the state of the quantum system is |_ψ_〉 immediately before the measurement then the probability that result _m_ occurs is given by:
-$$p(m) = \langle\psi|M_m^\dagger M_m|\psi\rangle \tag{NC 2.87}$$
 
-**Traducción:**
 Las mediciones cuánticas están descriptas por una colección $\{M_m\}$ de _operadores de medición_. Estos son operadores que actúan sobre el espacio de estados del sistema que se está midiendo. El índice _m_ se refiere a los resultados de medición que pueden ocurrir en el experimento. Si el estado del sistema cuántico es |_ψ_〉 inmediatamente antes de la medición, entonces la probabilidad de que ocurra el resultado _m_ está dada por:
 $$p(m) = \langle\psi|M_m^\dagger M_m|\psi\rangle \tag{NC 2.87}$$
 
@@ -114,6 +102,16 @@ $$\sum_m M_m^\dagger M_m = I$$
 - [[Michael A. Nielsen/Quantum Computation and Quantum Informatio - Michael A. Nielsen|Nielsen & Chuang]] - Sección 2.2.3 "Quantum measurement" (págs. 84-92)
 - [[Thomas G. Wong/Introduction to Classical and Quantum Computing - Thomas G. Wong|Wong]] - Capítulo 6 "Quantum Measurement"
 
+#### métodos para calcular P(+|η):
+
+con $\ket{η}$ expresado en una base distinta a Hadamard $\{\ket{+},\ket{-}\}$
+
+- Regla de Born: $P_+^η=∣⟨+∣η⟩∣^2$
+- Operador Proyección: $P_+^η = \bra{η}P_+\ket{η}$
+	- donde $P_+ = \ket{+}\bra{+}$ es el proyector en el estado $\ket{+}$
+- Matriz de densidad: $P_+^η = Tr(\rho_η⋅P_+)$
+	- donde $\rho_η = \ket{η}\bra{η}$ 
+	- [ ] es un proyector en el estado $\ket{η}$ ??
 
 #### Medición Proyectiva (caso especial)
 
