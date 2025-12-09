@@ -38,7 +38,7 @@ https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.circuit.library.Initiali
 
 ### salvar el estado, antes de una medición
 
->[!warn] en qk 1.0+ se movió a la módulo 
+>[!warn] en qk 1.0+ se movió a un  módulo 
 
 https://github.com/Qiskit/qiskit-aer/blob/main/qiskit_aer/library/save_instructions/save_statevector.py
 
@@ -71,6 +71,11 @@ https://quantum.cloud.ibm.com/docs/en/api/qiskit/qiskit.primitives.StatevectorSa
 
 ## numpy y simpy
 
+- enlaces - numpy
+- enlaces - sympy
+	- https://live.sympy.org/
+	- [matrices](https://docs.sympy.org/latest/tutorials/intro-tutorial/matrices.html)
+	- 
 ```python
 # Verificar que es un número real en el rango [0,1]
 error_redondeo=1e-10
@@ -116,6 +121,15 @@ proyector_z = np.outer(ket_zero, np.conj(ket_zero))
 
  ```python
  _=np.outer(ket_psi.conj(), ket_psi) #calcula $\bra{i}\otimes\ket{i}$
+```
+
+
+## autovalores y autovectores
+
+```python
+eigenvalues, eigenvectors = np.linalg.eig(np.array(([[1,2],[3,4]])))
+eigenvalues =  sp.Matrix([[1,2],[3,4]]).eigenvalues()
+eigenvectors =  sp.Matrix([[1,2],[3,4]]).eigenvects()
 ```
 
 ## Física

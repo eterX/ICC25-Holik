@@ -57,7 +57,7 @@ $$|\psi'\rangle = U|\psi\rangle \tag{NC 2.84}$$
 #### Postulado 2bis: Ecuación de Schrödinger
 
 **Enunciado (forma dependiente del tiempo):**
-$$i\hbar \frac{\partial}{\partial t}|\psi(t)\rangle = \hat{H}|\psi(t)\rangle \tag{NC 2.86}$$
+$$i\hbar \frac{\partial}{\partial t}|\psi\rangle = \hat{H}|\psi\rangle \tag{NC 2.86}$$
 
 **Traducción y explicación:**
 La ecuación de Schrödinger describe la evolución temporal continua de un estado cuántico, donde:
@@ -80,6 +80,13 @@ donde $\hat{U}(t) = e^{-i\hat{H}t/\hbar}$ es el operador de evolución temporal.
 - La evolución es determinista a nivel del vector de estado
 - La probabilidad emerge en la medición, no en la evolución
 - Las compuertas cuánticas son casos discretos de esta evolución continua
+
+La evolución viene dada por operadores lineales (matrices):
+
+$$\ket{\psi(t)} = U(t)\ket{\psi(0)} = e^{-(iHt/ℏ)\ket{\psi(0)}}$$
+donde H es el hamiltoniano del sistema.  Calcule el valor medio $\langle H \rangle$ de la energía es:
+$$\langle H \rangle = tr(\rho H)$$donde $\rho = |\psi\rangle\langle \psi|$
+$$\langle H \rangle = \langle\psi|H|\psi\rangle$$
 
 **Referencias:**
 - [[Michael A. Nielsen/Quantum Computation and Quantum Informatio - Michael A. Nielsen|Nielsen & Chuang]] - Sección 2.2.2 (ecuación 2.86)
@@ -109,9 +116,10 @@ con $\ket{η}$ expresado en una base distinta a Hadamard $\{\ket{+},\ket{-}\}$
 - Regla de Born: $P_+^η=∣⟨+∣η⟩∣^2$
 - Operador Proyección: $P_+^η = \bra{η}P_+\ket{η}$
 	- donde $P_+ = \ket{+}\bra{+}$ es el proyector en el estado $\ket{+}$
+	- $P$ es proyector sii $P=P^{\dagger}$ y $P=P^2$
 	- ver [[Michael A. Nielsen/Quantum Computation and Quantum Informatio - Michael A. Nielsen#Mediciones Proyectivas]]
 	- 
-- Matriz de densidad: $P_+^η = Tr(\rho_η⋅P_+)$
+- usando Matriz de densidad: $P_+^η = Tr(\rho_η⋅P_+)$
 	- donde $\rho_η = \ket{η}\bra{η}$ 
 
 #### Medición Proyectiva (caso especial)

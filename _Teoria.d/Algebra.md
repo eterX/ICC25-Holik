@@ -175,7 +175,7 @@ $$\det(A) = ad - (b + ic)(b - ic) = ad - (b^2 + c^2)$$
 
 **Resultado:** El determinante de un observable hermítico es **siempre real** (consecuencia de que sus valores propios son reales).
 
-### Relación con autovalores (o "valores propios")
+### Relación con autovalores (o "valores propios" o _eigenvalues_)
 
 Para cualquier matriz (incluyendo observables), el determinante es igual al **producto de sus valores propios**:
 
@@ -428,7 +428,11 @@ $$\hat{A} = \hat{A}^\dagger$$
 
 ---
 
+## Autovalores y autovectores
 
+![[strang-p217.png]]
+
+---
 ## Probabilidad
 ![](algebra_bayes.png)
 **Teorema de Bayes:**
