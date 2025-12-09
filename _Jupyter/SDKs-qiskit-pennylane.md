@@ -83,6 +83,9 @@ assert np.abs(Z.imag) < error_redondeo, "La probabilidad debe ser real"
 assert error_redondeo <= Z.real <= error_redondeo, "La probabilidad debe estar en el rango [0,1]"
 ```
 
+>[!tip] `lambda` is a reserved keyword in Python, so to create a Symbol called $\lambda$, use **lamda** (without the b). It will still pretty print as  $\lambda$
+
+
 ## numpy ↔ simpy
 
 $$\left[\begin{matrix}\frac{\sqrt{2}}{2} & 2\\3 & 4 e^{\frac{i \pi}{3} }\end{matrix}\right]$$
@@ -124,12 +127,17 @@ proyector_z = np.outer(ket_zero, np.conj(ket_zero))
 ```
 
 
-## autovalores y autovectores
+## autovalores y autovectores - diagonalización
 
 ```python
 eigenvalues, eigenvectors = np.linalg.eig(np.array(([[1,2],[3,4]])))
 eigenvalues =  sp.Matrix([[1,2],[3,4]]).eigenvalues()
 eigenvectors =  sp.Matrix([[1,2],[3,4]]).eigenvects()
+```
+
+```python
+#to diagonalize a matrix, use `diagonalize`. `diagonalize` returns a tuple , where  is diagonal and $M=PDP^1$
+P, D = M.diagonalize()
 ```
 
 ## Física

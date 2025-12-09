@@ -34,6 +34,14 @@ $$H\ket{0} = H\begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{p
 $$H\ket{1} = H\begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix} = \ket{-}$$
 
 
+## Diagonalización
+
+M=UDU† where:
+
+- D is diagonal matrix of eigenvalues
+- U is unitary matrix whose columns are eigenvectors
+
+
 ---
 
 ## Espacios Vectoriales sobre $\mathbb{C}$
@@ -374,7 +382,7 @@ $$\ket{00} = \left[\begin{array}{c} 1 \\ 0 \\ 0 \\ 0 \end{array}\right], \quad \
 - $b=\Im(z) (o  \operatorname{Im}(z))$
 - $e^z = 1 + z + \frac{z^2}{2!} + \frac{z^3}{3!} + \cdots$
 - [ ] verificar: $(e^a)^* = (cos(a) + i sen(a))^* = cos(a) - isen(a)) = cos(a) + isen(-a) = cos(-a) + isen(-a) = e^{-a}$
-- [ ] verificar: $∣c⋅z∣^2=(c⋅z)^∗(c⋅z)=c^∗z^∗cz=∣c∣^2∣z∣^2$
+-  $∣c⋅z∣^2=(c⋅z)^∗(c⋅z)=c^∗z^∗cz=∣c∣^2∣z∣^2$
 - ver [List of Complex Variables Formulas Latex Code](https://www.deepnlp.org/blog/complex-variables-formulas-latex)
 
 ```python
