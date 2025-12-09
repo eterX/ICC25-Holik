@@ -36,6 +36,31 @@ $$H\ket{1} = H\begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{p
 
 ---
 
+## Espacios Vectoriales sobre $\mathbb{C}$
+
+Un conjunto $V$ es un **espacio vectorial** sobre $\mathbb{C}$ si para todo $\ket{u}, \ket{v}, \ket{w} \in V$ y todo $c, d \in \mathbb{C}$ se satisfacen:
+
+**Axiomas de suma:**
+1. $\ket{u} + \ket{v} \in V$ (clausura)
+2. $\ket{u} + \ket{v} = \ket{v} + \ket{u}$ (conmutatividad)
+3. $(\ket{u} + \ket{v}) + \ket{w} = \ket{u} + (\ket{v} + \ket{w})$ (asociatividad)
+4. Existe $\ket{0} \in V$ tal que $\ket{u} + \ket{0} = \ket{u}$ (elemento neutro)
+5. Para cada $\ket{u} \in V$, existe $-\ket{u} \in V$ tal que $\ket{u} + (-\ket{u}) = \ket{0}$ (inverso aditivo)
+
+**Axiomas de multiplicación escalar:**
+6. $c\ket{u} \in V$ (clausura)
+7. $c(\ket{u} + \ket{v}) = c\ket{u} + c\ket{v}$ (distributividad respecto a suma de vectores)
+8. $(c + d)\ket{u} = c\ket{u} + d\ket{u}$ (distributividad respecto a suma de escalares)
+9. $c(d\ket{u}) = (cd)\ket{u}$ (asociatividad con escalares)
+10. $1\ket{u} = \ket{u}$ (elemento neutro escalar)
+
+**Corolario:** La suma y la multiplicación escalar son operaciones cerradas en el espacio vectorial.
+
+>[!tip] ver que todavía no es [[Producto Interno y ℋ (Espacios de Hilbert)|ℋ (Espacio de Hilbert)]] porque le falta el producto interno .(Esto sirve para dimensión finita. En infinita, te la debo.)
+
+
+---
+
 ### Transformaciones Lineales
 
 $$\begin{array}{}
@@ -84,7 +109,7 @@ $$= \sum_{i} (BA)_{ik} \ket{x_i} = (BA)\ket{v}$$
 
 donde $(BA)_{ik} = \sum_{j} B_{ij} A_{jk}$ es el producto matricial estándar.
 
-## determinante de una matriz (ejemplo observables)
+### determinante de una matriz (ejemplo observables)
 
 
 
@@ -120,33 +145,13 @@ Esto significa que $\det(U) = e^{i\phi}$ para algún $\phi \in \mathbb{R}$ (el d
 
 **Interpretación física:** Las operaciones unitarias preservan la probabilidad total del sistema cuántico, y esta propiedad se refleja en que el determinante tiene módulo unitario.
 
-### Ejemplos con Observables Cuánticos
+### Matrices de Pauli, Observables Cuánticos
 
 Los **observables** en mecánica cuántica se representan mediante operadores hermíticos. Veamos el determinante de los operadores de Pauli, que son observables fundamentales:
 
-#### Matriz de Pauli $X$ (bit-flip)
 
-$$X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$$
+[[Michael A. Nielsen/Quantum Computation and Quantum Informatio - Michael A. Nielsen|NC 2.1.3 The Pauli matrices]]
 
-$$\det(X) = (0)(0) - (1)(1) = -1$$
-
-**Interpretación:** El determinante negativo indica que la transformación invierte la orientación del espacio (reflexión). Geométricamente, $X$ intercambia los estados $\ket{0}$ y $\ket{1}$, efectivamente reflejando el vector de Bloch respecto al eje $x$.
-
-#### Matriz de Pauli $Y$
-
-$$Y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}$$
-
-$$\det(Y) = (0)(0) - (-i)(i) = -i^2 = -(-1) = 1$$
-
-**Observación:** A pesar de tener entradas complejas, el determinante es **real positivo**. Esto es consistente con $Y$ siendo hermítica, pero no refleja inversión de orientación como $X$.
-
-#### Matriz de Pauli $Z$ (phase-flip)
-
-$$Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$$
-
-$$\det(Z) = (1)(-1) - (0)(0) = -1$$
-
-**Interpretación:** Similar a $X$, el determinante negativo indica inversión de orientación. Geométricamente, $Z$ invierte la fase del estado $\ket{1}$, reflejando el vector de Bloch respecto al plano ecuatorial.
 
 #### Compuerta de Hadamard
 
@@ -170,15 +175,14 @@ $$\det(A) = ad - (b + ic)(b - ic) = ad - (b^2 + c^2)$$
 
 **Resultado:** El determinante de un observable hermítico es **siempre real** (consecuencia de que sus valores propios son reales).
 
-### Relación con Valores Propios
+### Relación con autovalores (o "valores propios")
 
 Para cualquier matriz (incluyendo observables), el determinante es igual al **producto de sus valores propios**:
 
 $$\det(A) = \prod_{i=1}^{n} \lambda_i$$
 
 En el caso de observables cuánticos:
-- Los valores propios $\lambda_i$ son **reales** (por hermiticidad)
-- Por lo tanto, $\det(A) \in \mathbb{R}$
+- Los valores propios $\lambda_i$ son **reales** (por hermiticidad) por lo tanto, $\det(A) \in \mathbb{R}$
 - Los valores propios representan los posibles resultados de una medición
 
 **Ejemplo con $Z$:**
@@ -199,88 +203,6 @@ En el contexto de la mecánica cuántica:
 3. **Interpretación geométrica en la esfera de Bloch:** El determinante indica si una transformación preserva o invierte la orientación del espacio de estados. Operadores con $\det < 0$ (como $X, Z, H$) invierten quiralidad.
 
 **Conexión con la física:** El signo del determinante no afecta las probabilidades medibles (que dependen de $|\braket{\psi|\phi}|^2$), pero sí tiene relevancia en la clasificación topológica de operadores y en la teoría de representaciones de grupos cuánticos.
-## Producto Externo (Outer Product) - Ket-Bra
-
-$$(\ket{w}\bra{v})(\ket{v'}) \equiv \ket{w}\braket{v|v'} = \braket{v|v'}\ket{w}$$
-
-**Propiedades:**
-- Podemos tomar combinaciones lineales de operadores producto externo $\ket{w}\bra{v}$ de la forma obvia
-- **Relación de completitud** para vectores ortonormales: $\sum_i \ket{i}\bra{i} = \mathbb{I}$
-
-**Nota importante:** El producto externo $\ket{w}\bra{v}$ es una **matriz** (operador), mientras que el producto interno $\braket{v|w}$ es un **escalar**.
-
----
-
-## Producto Tensorial
-
-**Definición:**
-
-$$\ket{\Psi\Gamma} \equiv \ket{\Psi} \otimes \ket{\Gamma}$$
-
-**Dimensiones:**
-
-$$\dim(\ket{\Psi} \otimes \ket{\Gamma}) = \dim(\ket{\Psi}) \times \dim(\ket{\Gamma})$$
-
-**Ejemplo explícito:**
-
-$$\left[\begin{array}{c} \alpha \\ \beta \end{array}\right] \otimes \left[\begin{array}{c} \gamma \\ \delta \end{array}\right] = \left[\begin{array}{c} \alpha \gamma \\ \alpha \delta \\ \beta \gamma \\ \beta \delta \end{array}\right]$$
-
-**Base computacional para 2 qubits:**
-
-$$\ket{00} = \left[\begin{array}{c} 1 \\ 0 \\ 0 \\ 0 \end{array}\right], \quad \ket{01} = \left[\begin{array}{c} 0 \\ 1 \\ 0 \\ 0 \end{array}\right], \quad \ket{10} = \left[\begin{array}{c} 0 \\ 0 \\ 1 \\ 0 \end{array}\right], \quad \ket{11} = \left[\begin{array}{c} 0 \\ 0 \\ 0 \\ 1 \end{array}\right]$$
-
-### Propiedades del Producto Tensorial
-
-1. **Propiedad distributiva** (para operadores $A, B, C$ actuando sobre subsistemas **separados**):
-   $$(A \otimes B \otimes C)(\ket{a} \otimes \ket{b} \otimes \ket{c}) = (A\ket{a}) \otimes (B\ket{b}) \otimes (C\ket{c})$$
-
-2. **No conmutatividad:**
-   $$\ket{v} \otimes \ket{w} \neq \ket{w} \otimes \ket{v}$$
-   
-3. **Factores escalares múltiples:**
-   $$(\alpha\ket{a}) \otimes (\beta\ket{b}) \otimes (\gamma\ket{c}) = \alpha\beta\gamma(\ket{a} \otimes \ket{b} \otimes \ket{c})$$
-   
-   Todos los factores escalares se multiplican entre sí y se factorizan.
-
-4. **Consecuencia importante para computación cuántica:**
-   
-   Al aplicar operadores como $Z_1 = Z \otimes I \otimes I$ a estados, cualquier factor de fase introducido por operaciones individuales en qubits se multiplica y se aplica al estado multi-qubit completo. Esta propiedad es fundamental para entender cómo las operaciones locales afectan estados cuánticos globales.
-   
-   **Notación de peso:**
-   $$Z_1 = Z \otimes I \otimes I \quad \text{(peso 1)}$$
-   $$Z_1 Z_3 = Z \otimes I \otimes Z \quad \text{(peso 2)}$$
-
-5. **Operadores en subsistemas diferentes:**
-   
-   $$(A\ket{a}) \otimes (B\ket{b}) = (A \otimes B)(\ket{a} \otimes \ket{b}) \neq AB(\ket{a} \otimes \ket{b})$$
-   
-   **Aclaración importante:**
-   - Lado izquierdo: $A$ actúa sobre $\ket{a}$, $B$ actúa sobre $\ket{b}$, luego se toma el producto tensorial
-   - Lado derecho: El **producto tensorial** $A \otimes B$ (no $AB$) actúa sobre $\ket{a} \otimes \ket{b}$
-   - $AB$ sería composición de operadores (producto matricial), mientras que $A \otimes B$ es producto tensorial
-
----
-## Espacios Vectoriales sobre $\mathbb{C}$
-
-Un conjunto $V$ es un **espacio vectorial** sobre $\mathbb{C}$ si para todo $\ket{u}, \ket{v}, \ket{w} \in V$ y todo $c, d \in \mathbb{C}$ se satisfacen:
-
-**Axiomas de suma:**
-1. $\ket{u} + \ket{v} \in V$ (clausura)
-2. $\ket{u} + \ket{v} = \ket{v} + \ket{u}$ (conmutatividad)
-3. $(\ket{u} + \ket{v}) + \ket{w} = \ket{u} + (\ket{v} + \ket{w})$ (asociatividad)
-4. Existe $\ket{0} \in V$ tal que $\ket{u} + \ket{0} = \ket{u}$ (elemento neutro)
-5. Para cada $\ket{u} \in V$, existe $-\ket{u} \in V$ tal que $\ket{u} + (-\ket{u}) = \ket{0}$ (inverso aditivo)
-
-**Axiomas de multiplicación escalar:**
-6. $c\ket{u} \in V$ (clausura)
-7. $c(\ket{u} + \ket{v}) = c\ket{u} + c\ket{v}$ (distributividad respecto a suma de vectores)
-8. $(c + d)\ket{u} = c\ket{u} + d\ket{u}$ (distributividad respecto a suma de escalares)
-9. $c(d\ket{u}) = (cd)\ket{u}$ (asociatividad con escalares)
-10. $1\ket{u} = \ket{u}$ (elemento neutro escalar)
-
-**Corolario:** La suma y la multiplicación escalar son operaciones cerradas en el espacio vectorial.
-
----
 
 ## Producto Interno y ℋ (Espacios de Hilbert)
 
@@ -348,20 +270,81 @@ $$\braket{v|w} = \left[\begin{array}{ccc} v_1^* & \cdots & v_n^* \end{array}\rig
 
 ---
 
+## Producto Externo (Outer Product) - Ket-Bra
+
+$$(\ket{w}\bra{v})(\ket{v'}) \equiv \ket{w}\braket{v|v'} = \braket{v|v'}\ket{w}$$
+
+**Propiedades:**
+- Podemos tomar combinaciones lineales de operadores producto externo $\ket{w}\bra{v}$ de la forma obvia
+- **Relación de completitud** para vectores ortonormales: $\sum_i \ket{i}\bra{i} = \mathbb{I}$
+
+**Nota importante:** El producto externo $\ket{w}\bra{v}$ es una **matriz** (operador), mientras que el producto interno $\braket{v|w}$ es un **escalar**.
+
+---
+
+## Producto Tensorial
+
+**Definición:**
+
+$$\ket{\Psi\Gamma} \equiv \ket{\Psi} \otimes \ket{\Gamma}$$
+
+**Dimensiones:**
+
+$$\dim(\ket{\Psi} \otimes \ket{\Gamma}) = \dim(\ket{\Psi}) \times \dim(\ket{\Gamma})$$
+
+**Ejemplo explícito:**
+
+$$\left[\begin{array}{c} \alpha \\ \beta \end{array}\right] \otimes \left[\begin{array}{c} \gamma \\ \delta \end{array}\right] = \left[\begin{array}{c} \alpha \gamma \\ \alpha \delta \\ \beta \gamma \\ \beta \delta \end{array}\right]$$
+
+**Base computacional para 2 qubits:**
+
+$$\ket{00} = \left[\begin{array}{c} 1 \\ 0 \\ 0 \\ 0 \end{array}\right], \quad \ket{01} = \left[\begin{array}{c} 0 \\ 1 \\ 0 \\ 0 \end{array}\right], \quad \ket{10} = \left[\begin{array}{c} 0 \\ 0 \\ 1 \\ 0 \end{array}\right], \quad \ket{11} = \left[\begin{array}{c} 0 \\ 0 \\ 0 \\ 1 \end{array}\right]$$
+
+### Propiedades del Producto Tensorial
+
+1. **Propiedad distributiva** (para operadores $A, B, C$ actuando sobre subsistemas **separados**):
+   $$(A \otimes B \otimes C)(\ket{a} \otimes \ket{b} \otimes \ket{c}) = (A\ket{a}) \otimes (B\ket{b}) \otimes (C\ket{c})$$
+
+2. **No conmutatividad:**
+   $$\ket{v} \otimes \ket{w} \neq \ket{w} \otimes \ket{v}$$
+   
+3. **Factores escalares múltiples:**
+   $$(\alpha\ket{a}) \otimes (\beta\ket{b}) \otimes (\gamma\ket{c}) = \alpha\beta\gamma(\ket{a} \otimes \ket{b} \otimes \ket{c})$$
+   
+   Todos los factores escalares se multiplican entre sí y se factorizan.
+
+4. **Consecuencia importante para computación cuántica:**
+   
+   Al aplicar operadores como $Z_1 = Z \otimes I \otimes I$ a estados, cualquier factor de fase introducido por operaciones individuales en qubits se multiplica y se aplica al estado multi-qubit completo. Esta propiedad es fundamental para entender cómo las operaciones locales afectan estados cuánticos globales.
+   
+   **Notación de peso:**
+   $$Z_1 = Z \otimes I \otimes I \quad \text{(peso 1)}$$
+   $$Z_1 Z_3 = Z \otimes I \otimes Z \quad \text{(peso 2)}$$
+
+5. **Operadores en subsistemas diferentes:**
+   
+   $$(A\ket{a}) \otimes (B\ket{b}) = (A \otimes B)(\ket{a} \otimes \ket{b}) \neq AB(\ket{a} \otimes \ket{b})$$
+   
+   **Aclaración importante:**
+   - Lado izquierdo: $A$ actúa sobre $\ket{a}$, $B$ actúa sobre $\ket{b}$, luego se toma el producto tensorial
+   - Lado derecho: El **producto tensorial** $A \otimes B$ (no $AB$) actúa sobre $\ket{a} \otimes \ket{b}$
+   - $AB$ sería composición de operadores (producto matricial), mientras que $A \otimes B$ es producto tensorial
+
+---
 ## Notación de Dirac
 
-| Notación                           | Descripción                                                                                                                                                                                                                                                                                                                                         |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| $z^*$                              | Conjugado complejo del número complejo $z$.<br>$(1 + i)^* = 1 - i$                                                                                                                                                                                                                                                                                  |
-| $\ket{\psi}$                       | Vector. También conocido como *ket*. Vector de estado cuántico en el espacio de Hilbert.<br><br>$$\ket{\psi} = \left[\begin{array}{c} a \\ b \end{array}\right]$$                                                                                                                                                                                   |
-| $\bra{\psi}$                       | Dual (conjugado transpuesto) de $\ket{\psi}$. También conocido como *bra*.<br>$$\bra{\psi} = \ket{\psi}^\dagger = \left[\begin{array}{cc} a^* & b^* \end{array}\right]$$                                                                                                                                                                            |
-| $\braket{\varphi\|\psi}$           | Producto interno  "bra-ket", entre los vectores $\ket{\varphi}$ y $\ket{\psi}$. Generalización del producto escalar al espacio complejo de Hilbert. **Devuelve un escalar.**<br><br>Norma de $\ket{\psi}$ al cuadrado: $\braket{\psi\|\psi} = \|\psi\|^2$<br>Regla de Born: $P(\ket{i}) = \|\braket{i\|\psi}\|^2$ (probabilidad de medir $\ket{i}$) |
-| $\ket{\varphi} \otimes \ket{\psi}$ | Producto tensorial de $\ket{\varphi}$ y $\ket{\psi}$. Operación fundamental para sistemas cuánticos compuestos (múltiples qubits).<br><br>Notación abreviada: $\ket{\varphi}\ket{\psi}$ o $\ket{\varphi\psi}$<br>Adjunto: $(\ket{\psi} \otimes \ket{\phi})^\dagger = \bra{\psi} \otimes \bra{\phi}$                                                 |
-| $\ket{\varphi}\bra{\psi}$          | Operador proyección (ket-bra) o *producto externo*. **Devuelve una matriz.**<br><br>Completitud: $\sum_i \ket{i}\bra{i} = \mathbb{I}$ (base ortonormal $\{\ket{i}\}$)<br>Matriz de densidad: $\rho = \ket{\psi}\bra{\psi}$                                                                                                                          |
-| $A^*$                              | Conjugado complejo de la matriz $A$.                                                                                                                                                                                                                                                                                                                |
-| $A^T$                              | Transpuesta de la matriz $A$.                                                                                                                                                                                                                                                                                                                       |
-| $A^\dagger$                        | Conjugado hermítico o adjunto de la matriz $A$, $A^\dagger = (A^T)^*$. Extensión al espacio complejo de la transpuesta.<br><br>$$\left[\begin{array}{cc} a & b \\ c & d \end{array}\right]^\dagger = \left[\begin{array}{cc} a^* & c^* \\ b^* & d^* \end{array}\right]$$                                                                            |
-| $\bra{\varphi}A\ket{\psi}$         | Producto interno entre $\ket{\varphi}$ y $A\ket{\psi}$.<br>Equivalentemente: producto interno entre $A^\dagger\ket{\varphi}$ y $\ket{\psi}$.<br><br>Propiedad: $(\bra{\psi}A\ket{\phi})^* = \bra{\phi}A^\dagger\ket{\psi}$                                                                                                                          |
+| Notación                           | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| $z^*$                              | Conjugado complejo del número complejo $z$.<br>$(1 + i)^* = 1 - i$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| $\ket{\psi}$                       | Vector. También conocido como *ket*. Vector de estado cuántico en el espacio de Hilbert.<br><br>$$\ket{\psi} = \left[\begin{array}{c} a \\ b \end{array}\right]$$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| $\bra{\psi}$                       | Dual (conjugado transpuesto) de $\ket{\psi}$. También conocido como *bra*.<br>$$\bra{\psi} = \ket{\psi}^\dagger = \left[\begin{array}{cc} a^* & b^* \end{array}\right]$$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| $\braket{\varphi\|\psi}$           | Producto interno  "bra-ket", entre los vectores $\ket{\varphi}$ y $\ket{\psi}$. Generalización del producto escalar al espacio complejo de Hilbert, ℋ. **Devuelve un escalar.**<br><br>- Norma de $\ket{\psi}$ al cuadrado: $\braket{\psi\|\psi} = \|\psi\|^2$<br>- Regla de Born: $P(\ket{\phi}) = \|\braket{\phi\|\psi}\|^2$ (probabilidad de medir $\ket{i}$)<br>- Regla de Born2: $P(\ket{\phi}) = \bra{\psi}P_{\phi}\ket{\psi}$ <br>    - donde  $P_{\phi}=\ket{\phi}\bra{\phi}$ es *Proyector sobre ${\phi}$*  (no una Probabilidad)$$p(m) = \langle\psi\|M_m^\dagger M_m\|\psi\rangle \tag{NC 2.87}$$<br>- Valor medio: $\braket{P}= \bra{\psi}P\ket{\psi}$ |
+| $\ket{\varphi} \otimes \ket{\psi}$ | Producto tensorial de $\ket{\varphi}$ y $\ket{\psi}$. Operación fundamental para sistemas cuánticos compuestos (múltiples qubits).<br><br>Notación abreviada: $\ket{\varphi}\ket{\psi}$ o $\ket{\varphi\psi}$<br>Adjunto: $(\ket{\psi} \otimes \ket{\phi})^\dagger = \bra{\psi} \otimes \bra{\phi}$                                                                                                                                                                                                                                                                                                                                                                |
+| $\ket{\varphi}\bra{\psi}$          | Operador proyección (ket-bra) o *producto externo*. **Devuelve una matriz.**<br><br>Completitud: $\sum_i \ket{i}\bra{i} = \mathbb{I}$ (base ortonormal $\{\ket{i}\}$)<br>Matriz de densidad: $\rho = \ket{\psi}\bra{\psi}$<br>Proyector: ver [[Fisica#Medición Proyectiva (caso especial)\|Proyectores(Física)]]                                                                                                                                                                                                                                                                                                                                                   |
+| $A^*$                              | Conjugado complejo de la matriz $A$.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| $A^T$                              | Transpuesta de la matriz $A$.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| $A^\dagger$                        | Conjugado hermítico o adjunto de la matriz $A$, $A^\dagger = (A^T)^*$. Extensión al espacio complejo de la transpuesta.<br><br>$$\left[\begin{array}{cc} a & b \\ c & d \end{array}\right]^\dagger = \left[\begin{array}{cc} a^* & c^* \\ b^* & d^* \end{array}\right]$$                                                                                                                                                                                                                                                                                                                                                                                           |
+| $\bra{\varphi}A\ket{\psi}$         | Producto interno entre $\ket{\varphi}$ y $A\ket{\psi}$.<br>Equivalentemente: producto interno entre $A^\dagger\ket{\varphi}$ y $\ket{\psi}$.<br><br>Propiedad: $(\bra{\psi}A\ket{\phi})^* = \bra{\phi}A^\dagger\ket{\psi}$                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 **Basado en Nielsen & Chuang, Figura 2.1.**
 
@@ -373,7 +356,7 @@ $$\braket{v|w} = \left[\begin{array}{ccc} v_1^* & \cdots & v_n^* \end{array}\rig
   Donde $\braket{\psi|\psi} = |\alpha|^2 + |\beta|^2 = 1$ (normalización).
 
 - **Valor esperado de un observable:**
-  $$\langle A \rangle = \bra{\psi}A\ket{\psi}$$
+  $$\langle M \rangle = \bra{\psi}M\ket{\psi}$$
 
 - **Estado de dos qubits (producto tensorial):**
   $$\ket{\Psi} = \ket{0} \otimes \ket{1} = \ket{01}$$

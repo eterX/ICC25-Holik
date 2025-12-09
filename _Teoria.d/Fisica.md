@@ -109,11 +109,19 @@ con $\ket{η}$ expresado en una base distinta a Hadamard $\{\ket{+},\ket{-}\}$
 - Regla de Born: $P_+^η=∣⟨+∣η⟩∣^2$
 - Operador Proyección: $P_+^η = \bra{η}P_+\ket{η}$
 	- donde $P_+ = \ket{+}\bra{+}$ es el proyector en el estado $\ket{+}$
+	- ver [[Michael A. Nielsen/Quantum Computation and Quantum Informatio - Michael A. Nielsen#Mediciones Proyectivas]]
+	- 
 - Matriz de densidad: $P_+^η = Tr(\rho_η⋅P_+)$
 	- donde $\rho_η = \ket{η}\bra{η}$ 
-	- [ ] es un proyector en el estado $\ket{η}$ ??
 
 #### Medición Proyectiva (caso especial)
+
+Operador Proyección: $P_+^\eta = \bra{\eta}P_+\ket{\eta}$
+	- donde $P_+ = \ket{+}\bra{+}$ es el proyector en el estado $\ket{+}$
+	- ver [[Michael A. Nielsen/Quantum Computation and Quantum Informatio - Michael A. Nielsen#Mediciones Proyectivas]]
+
+El proyector para un estado cuántico. Cuando aplano los vectores y calculo su producto externo, obtengo la matriz de proyección $\ket{\eta}\bra{\eta}$. La matriz resultante representa cómo   este estado proyecta otros vectores en su propio espacio, con elementos que son el producto de las componentes conjugadas.
+- [ ] cual es el "espacio" de un estado? "el rayo"? el espacio que tiene como base los autovalores de la matriz densidad?
 
 **Definición:**
 Una medición proyectiva está caracterizada por un observable (operador hermitiano) $M$ con descomposición espectral:
@@ -126,7 +134,7 @@ donde:
 
 **Regla de Born:**
 La probabilidad de obtener el resultado $m$ al medir el observable $M$ en el estado $|\psi\rangle$ es:
-$$p(m) = \langle\psi|P_m|\psi\rangle = ||P_m|\psi\rangle||^2$$
+$$p(m) = \langle\psi|P_m|\psi\rangle = |P_m|\psi\rangle|^2$$
 
 **Estado después de la medición proyectiva:**
 $$|\psi'\rangle = \frac{P_m|\psi\rangle}{\sqrt{\langle\psi|P_m|\psi\rangle}}$$
@@ -138,6 +146,9 @@ Para un qubit, medir en la base $\{|0\rangle, |1\rangle\}$:
 - Si $|\psi\rangle = \alpha|0\rangle + \beta|1\rangle$:
   - $p(0) = |\alpha|^2$
   - $p(1) = |\beta|^2$
+
+ver [[_Jupyter/SDKs-qiskit-pennylane#Regla de Born|implementación en Qiskit]]
+
 
 **Referencias:**
 - [[Michael A. Nielsen/Quantum Computation and Quantum Informatio - Michael A. Nielsen|Nielsen & Chuang]] - Sección 2.2.5 "Projective measurements"
@@ -197,6 +208,8 @@ $$A = A^\dagger$$
 - [[Michael A. Nielsen/Quantum Computation and Quantum Informatio - Michael A. Nielsen|Nielsen & Chuang]] - Sección 2.1.5 "Hermitian operators"
 - Ver también: [[Algebra#Operadores Hermíticos]]
 
+ver [[Algebra#Matrices de Pauli, Observables Cuánticos]]
+
 ---
 
 ## Principios Adicionales
@@ -231,7 +244,7 @@ Después de una medición que arroja resultado $m$, el estado del sistema "colap
 ---
 
 
-## Estados Puros y Estados Mixtos
+|## Estados Puros y Estados Mixtos
 
 ### Estados Puros
 
@@ -330,6 +343,8 @@ $$\text{Tr}(\rho) = 1$$
 
 **Cálculo explícito:**
 $$\text{Tr}(\rho) = \text{Tr}\left(\sum_i p_i |\psi_i\rangle\langle\psi_i|\right) = \sum_i p_i \text{Tr}(|\psi_i\rangle\langle\psi_i|) = \sum_i p_i \cdot 1 = 1$$
+
+Las matrices densidad siempre son hermíticas y sus autovalores son no-negativos. Geométricamente, siempre se pueden escribir como combinaciones convexas de matrices densidad asociadas a estados puros.
 
 #### 4. Criterio de Pureza: $\text{Tr}(\rho^2)$
 

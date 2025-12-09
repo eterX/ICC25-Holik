@@ -1,4 +1,6 @@
 
+>[!note] ver Numpy, Simpy, Qkiskit y Pennylane  en [[SDKs-qiskit-pennylane|nota sobre SDKs]]
+
 # Entorno Jupyter
 
 ## instalación
@@ -38,7 +40,15 @@ Un número complejo se define por:
 
 $$ z ∈ ℂ → z = a + bi $$
 $$ con\ a,b ∈ ℝ $$
-## cuaderno
+# cuadernos Jupyter
+
+
+```python
+from IPython.display import display, Math
+
+display("sale en latex: raiz de dos ... conjunto de complejos", 
+			Math("$\sqrt{2} \t{...} \mathbb{C}$"))
+```
 
 
 
