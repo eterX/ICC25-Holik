@@ -376,9 +376,21 @@ $$\gamma(\rho) = \text{Tr}(\rho^2)$$
 - $\gamma < 1$: estado mixto
 - $\gamma = 1/d$ (donde $d = \dim \mathcal{H}$): estado maximalmente mixto
 
-#### 5. Descomposición Espectral
+### resumen de propiedades
 
-Como $\rho$ es hermitiano, admite descomposición espectral:
+| Propiedad                           | Resulta estado puro               | Resulta mezcla                      |
+| ----------------------------------- | --------------------------------- | ----------------------------------- |
+| Traza = 1                           | Tr(ρᵩ) = 1                        | Tr(ρᵩ) = 1                          |
+| Hermítica                           | ρᵩ = ρᵩ†                          | ρᵩ = ρᵩ†                            |
+| Autovalores <br> no negativos       | det(ρᵩ − λI) = 0 <br> λᵢ ≥ 0      |                                     |
+| Pureza                              | Tr(ρᵩ²) =1 $\leftrightarrow$ puro | Tr(ρᵩ²) <1 $\leftrightarrow$ impuro |
+| Elementos fuera <br> de la diagonal | ≠ 0 (coherencia)                  | =0 (mezcla clásica)                 |
+| Interferencia                       | Si                                | NO                                  |
+|                                     |                                   |                                     |
+
+### Descomposición Espectral
+
+Como $\rho$ es hermítica, admite descomposición espectral:
 $$\rho = \sum_i \lambda_i |i\rangle\langle i|$$
 
 donde:
@@ -494,18 +506,19 @@ $$\rho_A = \text{Tr}_B(\rho_{AB}) = \frac{1}{2}(|0\rangle\langle 0| + |1\rangle\
 
 ### Tabla Resumen: Propiedades de $\rho$
 
-| Propiedad | Expresión Matemática | Significado |
-|-----------|---------------------|-------------|
-| **Hermiticidad** | $\rho = \rho^\dagger$ | Autovalores reales |
-| **Positividad** | $\langle\phi\|\rho\|\phi\rangle \geq 0$ | Autovalores no negativos |
-| **Traza unitaria** | $\text{Tr}(\rho) = 1$ | Normalización probabilística |
-| **Pureza** | $\text{Tr}(\rho^2) = 1$ (puro) | Criterio de distinción |
-| | $\text{Tr}(\rho^2) < 1$ (mixto) | entre puros y mixtos |
+| Propiedad                    | Expresión Matemática                            | Significado                                |
+| ---------------------------- | ----------------------------------------------- | ------------------------------------------ |
+| **Hermiticidad**             | $\rho = \rho^\dagger$                           | Autovalores reales                         |
+| **Positividad**              | $\langle\phi\|\rho\|\phi\rangle \geq 0$         | Autovalores no negativos                   |
+| **Traza unitaria**           | $\text{Tr}(\rho) = 1$                           | Normalización probabilística               |
+| **Pureza**                   | $\text{Tr}(\rho^2) = 1$ (puro)                  | Criterio de distinción                     |
+|                              | $\text{Tr}(\rho^2) < 1$ (mixto)                 | entre puros y mixtos                       |
 | **Descomposición espectral** | $\rho = \sum_i \lambda_i \|i\rangle\langle i\|$ | $\lambda_i \geq 0$, $\sum_i \lambda_i = 1$ |
-| **Probabilidad medición** | $p(m) = \text{Tr}(P_m \rho)$ | Regla generalizada de Born |
-| **Valor esperado** | $\langle M \rangle = \text{Tr}(M\rho)$ | Cálculo de observables |
-| **Evolución unitaria** | $\rho(t) = U\rho(0)U^\dagger$ | Dinámica cerrada |
-| **Ecuación de von Neumann** | $i\hbar \frac{d\rho}{dt} = [H, \rho]$ | Forma diferencial |
+| **Probabilidad medición**    | $p(m) = \text{Tr}(P_m \rho)$                    | Regla generalizada de Born                 |
+| **Valor esperado**           | $\langle M \rangle = \text{Tr}(M\rho)$          | Cálculo de observables                     |
+| **Evolución unitaria**       | $\rho(t) = U\rho(0)U^\dagger$                   | Dinámica cerrada                           |
+| **Ecuación de von Neumann**  | $i\hbar \frac{d\rho}{dt} = [H, \rho]$           | Forma diferencial                          |
+Nielsen & Chuang, page 101: "Two density operators are equal if and only if they give the same expectation values for all observables." This is sometimes called the operational equivalence of density matrices.
 
 
 ### Ventajas del Formalismo de Matriz Densidad

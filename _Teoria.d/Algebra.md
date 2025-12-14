@@ -33,8 +33,21 @@ $$X\ket{1} = X\begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 & 1 \\ 1 
 $$H\ket{0} = H\begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \ket{+}$$
 $$H\ket{1} = H\begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix} = \ket{-}$$
 
+### Traza
 
-## Diagonalización
+Tr(A) = Σᵢ Aᵢᵢ (suma diagonal)
+
+Propiedades:
+- Tr(AB) = Tr(BA)
+- Tr(A + B) = Tr(A) + Tr(B)
+- Tr(cA) = c Tr(A)
+
+### determinante, autovalores y autovectores
+
+$det(A − λI) = 0$
+sólo para 2x2: $λ² − Tr(A)λ + det(A) = 0$
+
+### Diagonalización
 
 M=UDU† where:
 
