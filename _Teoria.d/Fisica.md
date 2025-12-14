@@ -22,16 +22,13 @@ Extracto de [[Algebra#Notación de Dirac]]: ![[Algebra#Notación de Dirac]]
 
 ### Postulado 1: Espacio de Estados
 
-**Enunciado (Inglés):**
-Associated to any isolated physical system is a complex vector space with inner product (that is, a Hilbert space) known as the _state space_ of the system. The system is completely described by its _state vector_, which is a unit vector in the system's state space.
 
-**Traducción:**
 A todo sistema físico aislado se le asocia un espacio vectorial complejo con producto interno (esto es, un espacio de Hilbert) conocido como el _espacio de estados_ del sistema. El sistema está completamente descripto por su _vector de estado_, que es un vector unitario en el espacio de estados del sistema.
 
 **Explicación:**
-- El espacio de estados es matemáticamente un [[Algebra#Espacios de Hilbert|espacio de Hilbert]] ℋ sobre ℂ
-- Para un qubit: ℋ = ℂ²
-- Para n qubits: ℋ = ℂ^(2ⁿ) (producto tensorial de n copias de ℂ²)
+- El espacio de estados es matemáticamente un [[Algebra#Espacios de Hilbert|espacio de Hilbert ℋ]] sobre ℂ
+- Para un qubit: $ℋ = \mathbb{C}^2$
+- Para n qubits: $ℋ = \mathbb{C}^{2ⁿ}$ (producto tensorial de $n$ copias de ℂ²)
 - Condición de normalización: ⟨ψ|ψ⟩ = 1
 
 **Referencias:**
@@ -42,17 +39,12 @@ A todo sistema físico aislado se le asocia un espacio vectorial complejo con pr
 
 ### Postulado 2: Evolución Temporal
 
-**Enunciado (Inglés):**
-The evolution of a _closed_ quantum system is described by a _unitary transformation_. That is, the state |_ψ_〉 of the system at time $t_1$ is related to the state |_ψ′_〉 of the system at time $t_2$ by a unitary operator $U$ which depends only on the times $t_1$ and $t_2$,
-$$|\psi'\rangle = U|\psi\rangle \tag{NC 2.84}$$
-
-**Traducción:**
 La evolución de un sistema cuántico _cerrado_ está descripta por una _transformación unitaria_. Esto es, el estado |_ψ_〉 del sistema en el tiempo $t_1$ está relacionado con el estado |_ψ′_〉 del sistema en el tiempo $t_2$ mediante un operador unitario $U$ que depende únicamente de los tiempos $t_1$ y $t_2$,
 $$|\psi'\rangle = U|\psi\rangle \tag{NC 2.84}$$
 
 **Explicación:**
 - Operador unitario: $U^\dagger U = U U^\dagger = I$
-- Preserva el producto interno: ⟨ψ|φ⟩ = ⟨Uψ|Uφ⟩
+- Preserva el producto interno: $\braket{ψ|φ} = \bra{U}ψ\ket{U_φ}$
 - Conserva la normalización: ||ψ|| = ||Uψ||
 - La evolución es reversible: $U^{-1} = U^\dagger$
 
@@ -65,7 +57,7 @@ $$|\psi'\rangle = U|\psi\rangle \tag{NC 2.84}$$
 #### Postulado 2bis: Ecuación de Schrödinger
 
 **Enunciado (forma dependiente del tiempo):**
-$$i\hbar \frac{\partial}{\partial t}|\psi(t)\rangle = \hat{H}|\psi(t)\rangle \tag{NC 2.86}$$
+$$i\hbar \frac{\partial}{\partial t}|\psi\rangle = \hat{H}|\psi\rangle \tag{NC 2.86}$$
 
 **Traducción y explicación:**
 La ecuación de Schrödinger describe la evolución temporal continua de un estado cuántico, donde:
@@ -89,6 +81,13 @@ donde $\hat{U}(t) = e^{-i\hat{H}t/\hbar}$ es el operador de evolución temporal.
 - La probabilidad emerge en la medición, no en la evolución
 - Las compuertas cuánticas son casos discretos de esta evolución continua
 
+La evolución viene dada por operadores lineales (matrices):
+
+$$\ket{\psi(t)} = U(t)\ket{\psi(0)} = e^{-(iHt/ℏ)\ket{\psi(0)}}$$
+donde H es el hamiltoniano del sistema.  Calcule el valor medio $\langle H \rangle$ de la energía es:
+$$\langle H \rangle = tr(\rho H)$$donde $\rho = |\psi\rangle\langle \psi|$
+$$\langle H \rangle = \langle\psi|H|\psi\rangle$$
+
 **Referencias:**
 - [[Michael A. Nielsen/Quantum Computation and Quantum Informatio - Michael A. Nielsen|Nielsen & Chuang]] - Sección 2.2.2 (ecuación 2.86)
 - [[Alexei Yu. Kitaev/Classical and Quantum Computation - Alexei Yu. Kitaev|Kitaev et al.]] - Discusión de evolución unitaria
@@ -96,11 +95,7 @@ donde $\hat{U}(t) = e^{-i\hat{H}t/\hbar}$ es el operador de evolución temporal.
 
 ### Postulado 3: Medición Cuántica
 
-**Enunciado (Inglés):**
-Quantum measurements are described by a collection $\{M_m\}$ of _measurement operators_. These are operators acting on the state space of the system being measured. The index _m_ refers to the measurement outcomes that may occur in the experiment. If the state of the quantum system is |_ψ_〉 immediately before the measurement then the probability that result _m_ occurs is given by:
-$$p(m) = \langle\psi|M_m^\dagger M_m|\psi\rangle \tag{NC 2.87}$$
 
-**Traducción:**
 Las mediciones cuánticas están descriptas por una colección $\{M_m\}$ de _operadores de medición_. Estos son operadores que actúan sobre el espacio de estados del sistema que se está midiendo. El índice _m_ se refiere a los resultados de medición que pueden ocurrir en el experimento. Si el estado del sistema cuántico es |_ψ_〉 inmediatamente antes de la medición, entonces la probabilidad de que ocurra el resultado _m_ está dada por:
 $$p(m) = \langle\psi|M_m^\dagger M_m|\psi\rangle \tag{NC 2.87}$$
 
@@ -114,8 +109,27 @@ $$\sum_m M_m^\dagger M_m = I$$
 - [[Michael A. Nielsen/Quantum Computation and Quantum Informatio - Michael A. Nielsen|Nielsen & Chuang]] - Sección 2.2.3 "Quantum measurement" (págs. 84-92)
 - [[Thomas G. Wong/Introduction to Classical and Quantum Computing - Thomas G. Wong|Wong]] - Capítulo 6 "Quantum Measurement"
 
+#### métodos para calcular P(+|η):
+
+con $\ket{η}$ expresado en una base distinta a Hadamard $\{\ket{+},\ket{-}\}$
+
+- Regla de Born: $P_+^η=∣⟨+∣η⟩∣^2$
+- Operador Proyección: $P_+^η = \bra{η}P_+\ket{η}$
+	- donde $P_+ = \ket{+}\bra{+}$ es el proyector en el estado $\ket{+}$
+	- $P$ es proyector sii $P=P^{\dagger}$ y $P=P^2$
+	- ver [[Michael A. Nielsen/Quantum Computation and Quantum Informatio - Michael A. Nielsen#Mediciones Proyectivas]]
+	- 
+- usando Matriz de densidad: $P_+^η = Tr(\rho_η⋅P_+)$
+	- donde $\rho_η = \ket{η}\bra{η}$ 
 
 #### Medición Proyectiva (caso especial)
+
+Operador Proyección: $P_+^\eta = \bra{\eta}P_+\ket{\eta}$
+	- donde $P_+ = \ket{+}\bra{+}$ es el proyector en el estado $\ket{+}$
+	- ver [[Michael A. Nielsen/Quantum Computation and Quantum Informatio - Michael A. Nielsen#Mediciones Proyectivas]]
+
+El proyector para un estado cuántico. Cuando aplano los vectores y calculo su producto externo, obtengo la matriz de proyección $\ket{\eta}\bra{\eta}$. La matriz resultante representa cómo   este estado proyecta otros vectores en su propio espacio, con elementos que son el producto de las componentes conjugadas.
+- [ ] cual es el "espacio" de un estado? "el rayo"? el espacio que tiene como base los autovalores de la matriz densidad?
 
 **Definición:**
 Una medición proyectiva está caracterizada por un observable (operador hermitiano) $M$ con descomposición espectral:
@@ -128,7 +142,7 @@ donde:
 
 **Regla de Born:**
 La probabilidad de obtener el resultado $m$ al medir el observable $M$ en el estado $|\psi\rangle$ es:
-$$p(m) = \langle\psi|P_m|\psi\rangle = ||P_m|\psi\rangle||^2$$
+$$p(m) = \langle\psi|P_m|\psi\rangle = |P_m|\psi\rangle|^2$$
 
 **Estado después de la medición proyectiva:**
 $$|\psi'\rangle = \frac{P_m|\psi\rangle}{\sqrt{\langle\psi|P_m|\psi\rangle}}$$
@@ -140,6 +154,9 @@ Para un qubit, medir en la base $\{|0\rangle, |1\rangle\}$:
 - Si $|\psi\rangle = \alpha|0\rangle + \beta|1\rangle$:
   - $p(0) = |\alpha|^2$
   - $p(1) = |\beta|^2$
+
+ver [[_Jupyter/SDKs-qiskit-pennylane#Regla de Born|implementación en Qiskit]]
+
 
 **Referencias:**
 - [[Michael A. Nielsen/Quantum Computation and Quantum Informatio - Michael A. Nielsen|Nielsen & Chuang]] - Sección 2.2.5 "Projective measurements"
@@ -199,6 +216,8 @@ $$A = A^\dagger$$
 - [[Michael A. Nielsen/Quantum Computation and Quantum Informatio - Michael A. Nielsen|Nielsen & Chuang]] - Sección 2.1.5 "Hermitian operators"
 - Ver también: [[Algebra#Operadores Hermíticos]]
 
+ver [[Algebra#Matrices de Pauli, Observables Cuánticos]]
+
 ---
 
 ## Principios Adicionales
@@ -233,7 +252,7 @@ Después de una medición que arroja resultado $m$, el estado del sistema "colap
 ---
 
 
-## Estados Puros y Estados Mixtos
+|## Estados Puros y Estados Mixtos
 
 ### Estados Puros
 
@@ -333,6 +352,8 @@ $$\text{Tr}(\rho) = 1$$
 **Cálculo explícito:**
 $$\text{Tr}(\rho) = \text{Tr}\left(\sum_i p_i |\psi_i\rangle\langle\psi_i|\right) = \sum_i p_i \text{Tr}(|\psi_i\rangle\langle\psi_i|) = \sum_i p_i \cdot 1 = 1$$
 
+Las matrices densidad siempre son hermíticas y sus autovalores son no-negativos. Geométricamente, siempre se pueden escribir como combinaciones convexas de matrices densidad asociadas a estados puros.
+
 #### 4. Criterio de Pureza: $\text{Tr}(\rho^2)$
 
 **Para estados puros:**
@@ -355,9 +376,21 @@ $$\gamma(\rho) = \text{Tr}(\rho^2)$$
 - $\gamma < 1$: estado mixto
 - $\gamma = 1/d$ (donde $d = \dim \mathcal{H}$): estado maximalmente mixto
 
-#### 5. Descomposición Espectral
+### resumen de propiedades
 
-Como $\rho$ es hermitiano, admite descomposición espectral:
+| Propiedad                           | Resulta estado puro               | Resulta mezcla                      |
+| ----------------------------------- | --------------------------------- | ----------------------------------- |
+| Traza = 1                           | Tr(ρᵩ) = 1                        | Tr(ρᵩ) = 1                          |
+| Hermítica                           | ρᵩ = ρᵩ†                          | ρᵩ = ρᵩ†                            |
+| Autovalores <br> no negativos       | det(ρᵩ − λI) = 0 <br> λᵢ ≥ 0      |                                     |
+| Pureza                              | Tr(ρᵩ²) =1 $\leftrightarrow$ puro | Tr(ρᵩ²) <1 $\leftrightarrow$ impuro |
+| Elementos fuera <br> de la diagonal | ≠ 0 (coherencia)                  | =0 (mezcla clásica)                 |
+| Interferencia                       | Si                                | NO                                  |
+|                                     |                                   |                                     |
+
+### Descomposición Espectral
+
+Como $\rho$ es hermítica, admite descomposición espectral:
 $$\rho = \sum_i \lambda_i |i\rangle\langle i|$$
 
 donde:
@@ -473,18 +506,19 @@ $$\rho_A = \text{Tr}_B(\rho_{AB}) = \frac{1}{2}(|0\rangle\langle 0| + |1\rangle\
 
 ### Tabla Resumen: Propiedades de $\rho$
 
-| Propiedad | Expresión Matemática | Significado |
-|-----------|---------------------|-------------|
-| **Hermiticidad** | $\rho = \rho^\dagger$ | Autovalores reales |
-| **Positividad** | $\langle\phi\|\rho\|\phi\rangle \geq 0$ | Autovalores no negativos |
-| **Traza unitaria** | $\text{Tr}(\rho) = 1$ | Normalización probabilística |
-| **Pureza** | $\text{Tr}(\rho^2) = 1$ (puro) | Criterio de distinción |
-| | $\text{Tr}(\rho^2) < 1$ (mixto) | entre puros y mixtos |
+| Propiedad                    | Expresión Matemática                            | Significado                                |
+| ---------------------------- | ----------------------------------------------- | ------------------------------------------ |
+| **Hermiticidad**             | $\rho = \rho^\dagger$                           | Autovalores reales                         |
+| **Positividad**              | $\langle\phi\|\rho\|\phi\rangle \geq 0$         | Autovalores no negativos                   |
+| **Traza unitaria**           | $\text{Tr}(\rho) = 1$                           | Normalización probabilística               |
+| **Pureza**                   | $\text{Tr}(\rho^2) = 1$ (puro)                  | Criterio de distinción                     |
+|                              | $\text{Tr}(\rho^2) < 1$ (mixto)                 | entre puros y mixtos                       |
 | **Descomposición espectral** | $\rho = \sum_i \lambda_i \|i\rangle\langle i\|$ | $\lambda_i \geq 0$, $\sum_i \lambda_i = 1$ |
-| **Probabilidad medición** | $p(m) = \text{Tr}(P_m \rho)$ | Regla generalizada de Born |
-| **Valor esperado** | $\langle M \rangle = \text{Tr}(M\rho)$ | Cálculo de observables |
-| **Evolución unitaria** | $\rho(t) = U\rho(0)U^\dagger$ | Dinámica cerrada |
-| **Ecuación de von Neumann** | $i\hbar \frac{d\rho}{dt} = [H, \rho]$ | Forma diferencial |
+| **Probabilidad medición**    | $p(m) = \text{Tr}(P_m \rho)$                    | Regla generalizada de Born                 |
+| **Valor esperado**           | $\langle M \rangle = \text{Tr}(M\rho)$          | Cálculo de observables                     |
+| **Evolución unitaria**       | $\rho(t) = U\rho(0)U^\dagger$                   | Dinámica cerrada                           |
+| **Ecuación de von Neumann**  | $i\hbar \frac{d\rho}{dt} = [H, \rho]$           | Forma diferencial                          |
+Nielsen & Chuang, page 101: "Two density operators are equal if and only if they give the same expectation values for all observables." This is sometimes called the operational equivalence of density matrices.
 
 
 ### Ventajas del Formalismo de Matriz Densidad

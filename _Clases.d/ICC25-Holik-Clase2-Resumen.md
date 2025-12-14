@@ -219,7 +219,9 @@ Un conjunto B = {v₁, v₂, ..., vₙ} es una base de V si:
   - Ejercicios 2.7-2.10
 - **Wong:** 
   - Sección 2.4 "Basis and Dimension" (págs. 31-38)
-  - Ejemplos trabajados 2.4.1-2.4.3
+  - Ejemplos trabajados 
+  - 
+  - 2.4.1-2.4.3
 
 ### 8. Probabilidad en Física Cuántica
 
@@ -390,7 +392,7 @@ mindmap
       Ecuación de Schrödinger
         iℏ∂|ψ⟩/∂t = H|ψ⟩
       Operadores unitarios
-        U(t) = e^(-iHt/ℏ)
+        Ut = e elevado a la -iHt/ℏ
       Hamiltoniano
         Operador energía
     Probabilidad Cuántica
@@ -400,6 +402,7 @@ mindmap
       Interferencia cuántica
       Carácter intrínseco
 ```
+
 
 ### Computación Cuántica
 

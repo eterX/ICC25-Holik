@@ -33,6 +33,52 @@ $$X\ket{1} = X\begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 & 1 \\ 1 
 $$H\ket{0} = H\begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} = \ket{+}$$
 $$H\ket{1} = H\begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix} = \ket{-}$$
 
+### Traza
+
+Tr(A) = Σᵢ Aᵢᵢ (suma diagonal)
+
+Propiedades:
+- Tr(AB) = Tr(BA)
+- Tr(A + B) = Tr(A) + Tr(B)
+- Tr(cA) = c Tr(A)
+
+### determinante, autovalores y autovectores
+
+$det(A − λI) = 0$
+sólo para 2x2: $λ² − Tr(A)λ + det(A) = 0$
+
+### Diagonalización
+
+M=UDU† where:
+
+- D is diagonal matrix of eigenvalues
+- U is unitary matrix whose columns are eigenvectors
+
+
+---
+
+## Espacios Vectoriales sobre $\mathbb{C}$
+
+Un conjunto $V$ es un **espacio vectorial** sobre $\mathbb{C}$ si para todo $\ket{u}, \ket{v}, \ket{w} \in V$ y todo $c, d \in \mathbb{C}$ se satisfacen:
+
+**Axiomas de suma:**
+1. $\ket{u} + \ket{v} \in V$ (clausura)
+2. $\ket{u} + \ket{v} = \ket{v} + \ket{u}$ (conmutatividad)
+3. $(\ket{u} + \ket{v}) + \ket{w} = \ket{u} + (\ket{v} + \ket{w})$ (asociatividad)
+4. Existe $\ket{0} \in V$ tal que $\ket{u} + \ket{0} = \ket{u}$ (elemento neutro)
+5. Para cada $\ket{u} \in V$, existe $-\ket{u} \in V$ tal que $\ket{u} + (-\ket{u}) = \ket{0}$ (inverso aditivo)
+
+**Axiomas de multiplicación escalar:**
+6. $c\ket{u} \in V$ (clausura)
+7. $c(\ket{u} + \ket{v}) = c\ket{u} + c\ket{v}$ (distributividad respecto a suma de vectores)
+8. $(c + d)\ket{u} = c\ket{u} + d\ket{u}$ (distributividad respecto a suma de escalares)
+9. $c(d\ket{u}) = (cd)\ket{u}$ (asociatividad con escalares)
+10. $1\ket{u} = \ket{u}$ (elemento neutro escalar)
+
+**Corolario:** La suma y la multiplicación escalar son operaciones cerradas en el espacio vectorial.
+
+>[!tip] ver que todavía no es [[Producto Interno y ℋ (Espacios de Hilbert)|ℋ (Espacio de Hilbert)]] porque le falta el producto interno .(Esto sirve para dimensión finita. En infinita, te la debo.)
+
 
 ---
 
@@ -84,6 +130,166 @@ $$= \sum_{i} (BA)_{ik} \ket{x_i} = (BA)\ket{v}$$
 
 donde $(BA)_{ik} = \sum_{j} B_{ij} A_{jk}$ es el producto matricial estándar.
 
+### determinante de una matriz (ejemplo observables)
+
+
+
+El **determinante** de una matriz cuadrada $A$ de dimensión $n \times n$ es un escalar que codifica información geométrica y algebraica fundamental sobre la transformación lineal que representa. En computación cuántica, el determinante resulta particularmente relevante al estudiar **observables** (operadores hermíticos) y **operadores unitarios**.
+
+### Definición y Propiedades Generales
+
+Para una matriz $2 \times 2$:
+
+$$\det(A) = \det\begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc$$
+
+**Propiedades geométricas:**
+- El valor absoluto del determinante representa el **factor de escalamiento del volumen** (o área en 2D) bajo la transformación lineal
+- Si $|\det(A)| = 1$, la transformación preserva volúmenes
+- Si $\det(A) = 0$, la transformación colapsa el espacio a una dimensión menor (la matriz no es invertible)
+
+**Propiedades algebraicas fundamentales:**
+1. $\det(AB) = \det(A)\det(B)$ (multiplicatividad)
+2. $\det(A^T) = \det(A)$ (invarianza bajo transposición)
+3. $\det(A^{-1}) = \frac{1}{\det(A)}$ (si $A$ es invertible)
+4. $\det(\lambda A) = \lambda^n \det(A)$ (homogeneidad de grado $n$)
+
+### Determinante de Matrices Unitarias
+
+Los **operadores unitarios** (compuertas cuánticas) satisfacen $U^\dagger U = \mathbb{I}$, lo cual implica:
+
+$$\det(U^\dagger U) = \det(U^\dagger)\det(U) = \det(U)^* \det(U) = |\det(U)|^2 = \det(\mathbb{I}) = 1$$
+
+Por lo tanto:
+$$|\det(U)| = 1$$
+
+Esto significa que $\det(U) = e^{i\phi}$ para algún $\phi \in \mathbb{R}$ (el determinante está en el círculo unitario del plano complejo).
+
+**Interpretación física:** Las operaciones unitarias preservan la probabilidad total del sistema cuántico, y esta propiedad se refleja en que el determinante tiene módulo unitario.
+
+### Matrices de Pauli, Observables Cuánticos
+
+Los **observables** en mecánica cuántica se representan mediante operadores hermíticos. Veamos el determinante de los operadores de Pauli, que son observables fundamentales:
+
+
+[[Michael A. Nielsen/Quantum Computation and Quantum Informatio - Michael A. Nielsen|NC 2.1.3 The Pauli matrices]]
+
+
+#### Compuerta de Hadamard
+
+$$H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$$
+
+$$\det(H) = \frac{1}{2}\left[(1)(-1) - (1)(1)\right] = \frac{1}{2}(-1 - 1) = -1$$
+
+**Observación importante:** Aunque $H$ tiene factor de normalización $\frac{1}{\sqrt{2}}$, su determinante es $-1$ (no $1$), indicando que invierte orientación. Sin embargo, $|det(H)| = 1$ confirma que es unitaria.
+
+>[!tip] para recordar, las columnas son $\ket{+}$ y $\ket{-}$ (obvio pq $H\ket{0}=\ket{+}$ y $H\ket{1}=\ket{-}$)
+
+#### Observable Arbitrario (Ejemplo Didáctico)
+
+Consideremos un observable hermítico general de $2 \times 2$:
+
+$$A = \begin{pmatrix} a & b + ic \\ b - ic & d \end{pmatrix}$$
+
+donde $a, b, c, d \in \mathbb{R}$ (garantizando que $A = A^\dagger$).
+
+$$\det(A) = ad - (b + ic)(b - ic) = ad - (b^2 + c^2)$$
+
+**Resultado:** El determinante de un observable hermítico es **siempre real** (consecuencia de que sus valores propios son reales).
+
+### Relación con autovalores (o "valores propios" o _eigenvalues_)
+
+Para cualquier matriz (incluyendo observables), el determinante es igual al **producto de sus valores propios**:
+
+$$\det(A) = \prod_{i=1}^{n} \lambda_i$$
+
+En el caso de observables cuánticos:
+- Los valores propios $\lambda_i$ son **reales** (por hermiticidad) por lo tanto, $\det(A) \in \mathbb{R}$
+- Los valores propios representan los posibles resultados de una medición
+
+**Ejemplo con $Z$:**
+
+Los valores propios de $Z$ son $\lambda_1 = 1$ y $\lambda_2 = -1$, entonces:
+$$\det(Z) = (1)(-1) = -1$$
+
+Esto confirma nuestro cálculo directo y muestra que el determinante codifica información espectral del observable.
+
+### Significado Físico
+
+En el contexto de la mecánica cuántica:
+
+1. **Para operadores unitarios** ($U$): $|\det(U)| = 1$ garantiza reversibilidad y conservación de la norma (probabilidad total).
+
+2. **Para observables** ($A = A^\dagger$): $\det(A) \in \mathbb{R}$ es una consecuencia de la realidad de los valores propios, y su magnitud puede indicar si el operador es invertible (mediciones no degeneradas).
+
+3. **Interpretación geométrica en la esfera de Bloch:** El determinante indica si una transformación preserva o invierte la orientación del espacio de estados. Operadores con $\det < 0$ (como $X, Z, H$) invierten quiralidad.
+
+**Conexión con la física:** El signo del determinante no afecta las probabilidades medibles (que dependen de $|\braket{\psi|\phi}|^2$), pero sí tiene relevancia en la clasificación topológica de operadores y en la teoría de representaciones de grupos cuánticos.
+
+## Producto Interno y ℋ (Espacios de Hilbert)
+
+El **dual** de $\ket{v}$ es un operador lineal del espacio vectorial a los números complejos, $V \to \mathbb{C}$:
+
+$$\bra{v}(\ket{w}) \equiv \braket{v|w} \equiv (\ket{v}, \ket{w})$$
+
+**Correspondencia ket-bra:**
+
+$$\ket{v} = \left[\begin{array}{c} 1 \\ 2 \end{array}\right] \iff \bra{v} = \left[\begin{array}{cc} 1^* & 2^* \end{array}\right]$$
+
+**Ejemplo completo:**
+
+Dado el vector:
+$$\ket{\psi} = \alpha\ket{0} + \beta\ket{1} = \left[\begin{array}{c} \alpha \\ \beta \end{array}\right]$$
+
+Su dual ("bra") es:
+$$\bra{\psi} = (\alpha^*, \beta^*) = \alpha^*\bra{0} + \beta^*\bra{1}$$
+
+Dado otro vector:
+$$\ket{\phi} = \gamma\ket{0} + \delta\ket{1} = \left[\begin{array}{c} \gamma \\ \delta \end{array}\right]$$
+
+El producto interno es:
+$$\braket{\psi|\phi} = (\alpha^*\bra{0} + \beta^*\bra{1})(\gamma\ket{0} + \delta\ket{1})$$
+
+$$= (\alpha^*, \beta^*) \left[\begin{array}{c} \gamma \\ \delta \end{array}\right] = \alpha^*\gamma + \beta^*\delta$$
+
+**Ver Regla de Born:** La probabilidad de medir $\ket{\phi}$ dado que el sistema está en $\ket{\psi}$ es:
+$$P_\psi(\phi) = P_\psi^{\phi}= P(\phi|\psi) = |\braket{\phi|\psi}|^2$$
+>[!tip] el orden del producto interno se lee como en la [[#probabilidad|probabilidad condicional]], pero nimporta el orden ya que "$\braket{|}$" es Hermitico (simetría conjugada), y solo importa el módulo. Es decir $P(\phi|\psi)=P(\psi|\phi)$
+
+
+
+### Definición Axiomática del Producto Interno
+
+Una función $(\cdot, \cdot)$ de $V \times V$ a $\mathbb{C}$ es un **producto interno** si satisface:
+
+1. **Linealidad en el segundo argumento:**
+   $$\left(\ket{v}, \sum_i \lambda_i\ket{w_i}\right) = \sum_i \lambda_i (\ket{v}, \ket{w_i})$$
+
+2. **Hermiticidad (simetría conjugada):**
+   $$(\ket{v}, \ket{w}) = (\ket{w}, \ket{v})^*$$
+
+3. **Positividad:**
+   $$\|\ket{v}\| = (\ket{v}, \ket{v}) \geq 0$$
+   $$\|\ket{v}\| = 0 \iff \ket{v} = \mathbf{0}$$
+
+**Definiciones:**
+- **Espacio con producto interno:** Espacio vectorial equipado con un producto interno
+- **Espacio de Hilbert:** En espacios vectoriales complejos de **dimensión finita**, un espacio de Hilbert es _exactamente lo mismo_ que un espacio con producto interno.
+- [ ] validar:  En dimensión infinita, además se pide que sea cerrado.
+
+### Producto Interno en Base Ortonormal
+
+$$\braket{v|w} = \left(\sum_i v_i\ket{i}, \sum_j w_j\ket{j}\right) = \sum_{i,j} v_i^* w_j \braket{i|j}$$
+
+$$= \sum_{i,j} v_i^* w_j \delta_{ij} = \sum_i v_i^* w_i \tag{NC 2.18}$$
+
+donde:
+$$\delta_{ij} = \begin{cases} 0 & \text{si } i \neq j \\ 1 & \text{si } i = j \end{cases}$$
+
+**Representación matricial:**
+
+$$\braket{v|w} = \left[\begin{array}{ccc} v_1^* & \cdots & v_n^* \end{array}\right] \left[\begin{array}{c} w_1 \\ \vdots \\ w_n \end{array}\right] \tag{NC 2.19}$$
+
+---
 
 ## Producto Externo (Outer Product) - Ket-Bra
 
@@ -146,104 +352,20 @@ $$\ket{00} = \left[\begin{array}{c} 1 \\ 0 \\ 0 \\ 0 \end{array}\right], \quad \
    - $AB$ sería composición de operadores (producto matricial), mientras que $A \otimes B$ es producto tensorial
 
 ---
-## Espacios Vectoriales sobre $\mathbb{C}$
-
-Un conjunto $V$ es un **espacio vectorial** sobre $\mathbb{C}$ si para todo $\ket{u}, \ket{v}, \ket{w} \in V$ y todo $c, d \in \mathbb{C}$ se satisfacen:
-
-**Axiomas de suma:**
-1. $\ket{u} + \ket{v} \in V$ (clausura)
-2. $\ket{u} + \ket{v} = \ket{v} + \ket{u}$ (conmutatividad)
-3. $(\ket{u} + \ket{v}) + \ket{w} = \ket{u} + (\ket{v} + \ket{w})$ (asociatividad)
-4. Existe $\ket{0} \in V$ tal que $\ket{u} + \ket{0} = \ket{u}$ (elemento neutro)
-5. Para cada $\ket{u} \in V$, existe $-\ket{u} \in V$ tal que $\ket{u} + (-\ket{u}) = \ket{0}$ (inverso aditivo)
-
-**Axiomas de multiplicación escalar:**
-6. $c\ket{u} \in V$ (clausura)
-7. $c(\ket{u} + \ket{v}) = c\ket{u} + c\ket{v}$ (distributividad respecto a suma de vectores)
-8. $(c + d)\ket{u} = c\ket{u} + d\ket{u}$ (distributividad respecto a suma de escalares)
-9. $c(d\ket{u}) = (cd)\ket{u}$ (asociatividad con escalares)
-10. $1\ket{u} = \ket{u}$ (elemento neutro escalar)
-
-**Corolario:** La suma y la multiplicación escalar son operaciones cerradas en el espacio vectorial.
-
----
-
-## Producto Interno y Espacios de Hilbert
-
-El **dual** de $\ket{v}$ es un operador lineal del espacio vectorial a los números complejos, $V \to \mathbb{C}$:
-
-$$\bra{v}(\ket{w}) \equiv \braket{v|w} \equiv (\ket{v}, \ket{w})$$
-
-**Correspondencia ket-bra:**
-
-$$\ket{v} = \left[\begin{array}{c} 1 \\ 2 \end{array}\right] \iff \bra{v} = \left[\begin{array}{cc} 1^* & 2^* \end{array}\right]$$
-
-**Ejemplo completo:**
-
-Dado el vector:
-$$\ket{\psi} = \alpha\ket{0} + \beta\ket{1} = \left[\begin{array}{c} \alpha \\ \beta \end{array}\right]$$
-
-Su dual ("bra") es:
-$$\bra{\psi} = (\alpha^*, \beta^*) = \alpha^*\bra{0} + \beta^*\bra{1}$$
-
-Dado otro vector:
-$$\ket{\phi} = \gamma\ket{0} + \delta\ket{1} = \left[\begin{array}{c} \gamma \\ \delta \end{array}\right]$$
-
-El producto interno es:
-$$\braket{\psi|\phi} = (\alpha^*\bra{0} + \beta^*\bra{1})(\gamma\ket{0} + \delta\ket{1})$$
-
-$$= (\alpha^*, \beta^*) \left[\begin{array}{c} \gamma \\ \delta \end{array}\right] = \alpha^*\gamma + \beta^*\delta$$
-
-**Ver Regla de Born:** La probabilidad de medir $\ket{\phi}$ dado que el sistema está en $\ket{\psi}$ es:
-$$P(\phi|\psi) = |\braket{\phi|\psi}|^2$$
-
-### Definición Axiomática del Producto Interno
-
-Una función $(\cdot, \cdot)$ de $V \times V$ a $\mathbb{C}$ es un **producto interno** si satisface:
-
-1. **Linealidad en el segundo argumento:**
-   $$\left(\ket{v}, \sum_i \lambda_i\ket{w_i}\right) = \sum_i \lambda_i (\ket{v}, \ket{w_i})$$
-
-2. **Hermiticidad (simetría conjugada):**
-   $$(\ket{v}, \ket{w}) = (\ket{w}, \ket{v})^*$$
-
-3. **Positividad:**
-   $$\|\ket{v}\| = (\ket{v}, \ket{v}) \geq 0$$
-   $$\|\ket{v}\| = 0 \iff \ket{v} = \mathbf{0}$$
-
-**Definiciones:**
-- **Espacio con producto interno:** Espacio vectorial equipado con un producto interno
-- **Espacio de Hilbert:** En espacios vectoriales complejos de **dimensión finita**, un espacio de Hilbert es _exactamente lo mismo_ que un espacio con producto interno
-
-### Producto Interno en Base Ortonormal
-
-$$\braket{v|w} = \left(\sum_i v_i\ket{i}, \sum_j w_j\ket{j}\right) = \sum_{i,j} v_i^* w_j \braket{i|j}$$
-
-$$= \sum_{i,j} v_i^* w_j \delta_{ij} = \sum_i v_i^* w_i \tag{NC 2.18}$$
-
-donde:
-$$\delta_{ij} = \begin{cases} 0 & \text{si } i \neq j \\ 1 & \text{si } i = j \end{cases}$$
-
-**Representación matricial:**
-
-$$\braket{v|w} = \left[\begin{array}{ccc} v_1^* & \cdots & v_n^* \end{array}\right] \left[\begin{array}{c} w_1 \\ \vdots \\ w_n \end{array}\right] \tag{NC 2.19}$$
-
----
-
 ## Notación de Dirac
 
-| Notación                           | Descripción                                                                                                                                                                                                                                                                                                                                         |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| $z^*$                              | Conjugado complejo del número complejo $z$.<br>$(1 + i)^* = 1 - i$                                                                                                                                                                                                                                                                                  |
-| $\ket{\psi}$                       | Vector. También conocido como *ket*. Vector de estado cuántico en el espacio de Hilbert.<br><br>$$\ket{\psi} = \left[\begin{array}{c} a \\ b \end{array}\right]$$                                                                                                                                                                                   |
-| $\bra{\psi}$                       | Dual (conjugado transpuesto) de $\ket{\psi}$. También conocido como *bra*.<br>$$\bra{\psi} = \ket{\psi}^\dagger = \left[\begin{array}{cc} a^* & b^* \end{array}\right]$$                                                                                                                                                                            |
-| $\braket{\varphi\|\psi}$           | Producto interno  "bra-ket", entre los vectores $\ket{\varphi}$ y $\ket{\psi}$. Generalización del producto escalar al espacio complejo de Hilbert. **Devuelve un escalar.**<br><br>Norma de $\ket{\psi}$ al cuadrado: $\braket{\psi\|\psi} = \|\psi\|^2$<br>Regla de Born: $P(\ket{i}) = \|\braket{i\|\psi}\|^2$ (probabilidad de medir $\ket{i}$) |
-| $\ket{\varphi} \otimes \ket{\psi}$ | Producto tensorial de $\ket{\varphi}$ y $\ket{\psi}$. Operación fundamental para sistemas cuánticos compuestos (múltiples qubits).<br><br>Notación abreviada: $\ket{\varphi}\ket{\psi}$ o $\ket{\varphi\psi}$<br>Adjunto: $(\ket{\psi} \otimes \ket{\phi})^\dagger = \bra{\psi} \otimes \bra{\phi}$                                                 |
-| $\ket{\varphi}\bra{\psi}$          | Operador proyección (ket-bra) o *producto externo*. **Devuelve una matriz.**<br><br>Completitud: $\sum_i \ket{i}\bra{i} = \mathbb{I}$ (base ortonormal $\{\ket{i}\}$)<br>Matriz de densidad: $\rho = \ket{\psi}\bra{\psi}$                                                                                                                          |
-| $A^*$                              | Conjugado complejo de la matriz $A$.                                                                                                                                                                                                                                                                                                                |
-| $A^T$                              | Transpuesta de la matriz $A$.                                                                                                                                                                                                                                                                                                                       |
-| $A^\dagger$                        | Conjugado hermítico o adjunto de la matriz $A$, $A^\dagger = (A^T)^*$. Extensión al espacio complejo de la transpuesta.<br><br>$$\left[\begin{array}{cc} a & b \\ c & d \end{array}\right]^\dagger = \left[\begin{array}{cc} a^* & c^* \\ b^* & d^* \end{array}\right]$$                                                                            |
-| $\bra{\varphi}A\ket{\psi}$         | Producto interno entre $\ket{\varphi}$ y $A\ket{\psi}$.<br>Equivalentemente: producto interno entre $A^\dagger\ket{\varphi}$ y $\ket{\psi}$.<br><br>Propiedad: $(\bra{\psi}A\ket{\phi})^* = \bra{\phi}A^\dagger\ket{\psi}$                                                                                                                          |
+| Notación                           | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| $z^*$                              | Conjugado complejo del número complejo $z$.<br>$(1 + i)^* = 1 - i$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| $\ket{\psi}$                       | Vector. También conocido como *ket*. Vector de estado cuántico en el espacio de Hilbert.<br><br>$$\ket{\psi} = \left[\begin{array}{c} a \\ b \end{array}\right]$$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| $\bra{\psi}$                       | Dual (conjugado transpuesto) de $\ket{\psi}$. También conocido como *bra*.<br>$$\bra{\psi} = \ket{\psi}^\dagger = \left[\begin{array}{cc} a^* & b^* \end{array}\right]$$                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| $\braket{\varphi\|\psi}$           | Producto interno  "bra-ket", entre los vectores $\ket{\varphi}$ y $\ket{\psi}$. Generalización del producto escalar al espacio complejo de Hilbert, ℋ. **Devuelve un escalar.**<br><br>- Norma de $\ket{\psi}$ al cuadrado: $\braket{\psi\|\psi} = \|\psi\|^2$<br>- Regla de Born: $P(\ket{\phi}) = \|\braket{\phi\|\psi}\|^2$ (probabilidad de medir $\ket{i}$)<br>- Regla de Born2: $P(\ket{\phi}) = \bra{\psi}P_{\phi}\ket{\psi}$ <br>    - donde  $P_{\phi}=\ket{\phi}\bra{\phi}$ es *Proyector sobre ${\phi}$*  (no una Probabilidad)$$p(m) = \langle\psi\|M_m^\dagger M_m\|\psi\rangle \tag{NC 2.87}$$<br>- Valor medio: $\braket{P}= \bra{\psi}P\ket{\psi}$ |
+| $\ket{\varphi} \otimes \ket{\psi}$ | Producto tensorial de $\ket{\varphi}$ y $\ket{\psi}$. Operación fundamental para sistemas cuánticos compuestos (múltiples qubits).<br><br>Notación abreviada: $\ket{\varphi}\ket{\psi}$ o $\ket{\varphi\psi}$<br>Adjunto: $(\ket{\psi} \otimes \ket{\phi})^\dagger = \bra{\psi} \otimes \bra{\phi}$                                                                                                                                                                                                                                                                                                                                                                |
+| $\ket{\varphi}\bra{\psi}$          | Operador proyección (ket-bra) o *producto externo*. **Devuelve una matriz.**<br><br>Completitud: $\sum_i \ket{i}\bra{i} = \mathbb{I}$ (base ortonormal $\{\ket{i}\}$)<br>Matriz de densidad: $\rho = \ket{\psi}\bra{\psi}$<br>Proyector: ver [[Fisica#Medición Proyectiva (caso especial)\|Proyectores(Física)]]                                                                                                                                                                                                                                                                                                                                                   |
+| $A^*$                              | Conjugado complejo de la matriz $A$.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| $A^T$                              | Transpuesta de la matriz $A$.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| $A^\dagger$                        | Conjugado hermítico o adjunto de la matriz $A$, $A^\dagger = (A^T)^*$. Extensión al espacio complejo de la transpuesta.<br><br>$$\left[\begin{array}{cc} a & b \\ c & d \end{array}\right]^\dagger = \left[\begin{array}{cc} a^* & c^* \\ b^* & d^* \end{array}\right]$$                                                                                                                                                                                                                                                                                                                                                                                           |
+| $\bra{\varphi}A\ket{\psi}$         | Producto interno entre $\ket{\varphi}$ y $A\ket{\psi}$.<br>Equivalentemente: producto interno entre $A^\dagger\ket{\varphi}$ y $\ket{\psi}$.<br><br>Propiedad: $(\bra{\psi}A\ket{\phi})^* = \bra{\phi}A^\dagger\ket{\psi}$                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 **Basado en Nielsen & Chuang, Figura 2.1.**
 
@@ -255,7 +377,7 @@ $$\braket{v|w} = \left[\begin{array}{ccc} v_1^* & \cdots & v_n^* \end{array}\rig
   Donde $\braket{\psi|\psi} = |\alpha|^2 + |\beta|^2 = 1$ (normalización).
 
 - **Valor esperado de un observable:**
-  $$\langle A \rangle = \bra{\psi}A\ket{\psi}$$
+  $$\langle M \rangle = \bra{\psi}M\ket{\psi}$$
 
 - **Estado de dos qubits (producto tensorial):**
   $$\ket{\Psi} = \ket{0} \otimes \ket{1} = \ket{01}$$
@@ -265,20 +387,35 @@ $$\braket{v|w} = \left[\begin{array}{ccc} v_1^* & \cdots & v_n^* \end{array}\rig
 
 ---
 
-## Números Complejos (Escalares del Espacio Vectorial)
+## Complejos (escalares de ℋ)
 
+- $z =a+ib$
+- $i^2 = -1$
+- $a=\Re(z) ... (or \operatorname{Re}(z), Re(z))$
+- $b=\Im(z) (o  \operatorname{Im}(z))$
+- $e^z = 1 + z + \frac{z^2}{2!} + \frac{z^3}{3!} + \cdots$
+- [ ] verificar: $(e^a)^* = (cos(a) + i sen(a))^* = cos(a) - isen(a)) = cos(a) + isen(-a) = cos(-a) + isen(-a) = e^{-a}$
+-  $∣c⋅z∣^2=(c⋅z)^∗(c⋅z)=c^∗z^∗cz=∣c∣^2∣z∣^2$
+- ver [List of Complex Variables Formulas Latex Code](https://www.deepnlp.org/blog/complex-variables-formulas-latex)
+
+```python
+>>> z=1+2j ; z.real , z.imag ,  z.conjugate(), z , z.conjugate()*z
+(1.0, 2.0, (1-2j), (1+2j), (5+0j))
+```
 ### Norma
 
-**Notación cartesiana:**
+**Notación cartesiana o algebraica**
 
-$$\|z\|^2 = z z^* = (a + ib)(a - ib) = a^2 + b^2$$
+
+$$\|z\|^2 = z z^* = z\overline{z}= (a + ib)(a - ib) = a^2 + b^2$$
 
 **Notación polar (forma de Euler):**
 
 $$z = a + ib = \|z\| e^{i\theta} = \|z\|\cos(\theta) + i\|z\|\sin(\theta)$$
+$(\cos \theta + i \sin \theta)^{n}=e^{in\theta}=\cos n\theta + i \sin n\theta$
 
 donde:
-- $\|z\| = \sqrt{a^2 + b^2}$ (módulo)
+- $\|z\| = \sqrt{a^2 + b^2}$ (módulo, en Inglés "modulus" y no "modulo")
 - $\theta = \arctan(b/a)$ (argumento o fase)
 
 ---
@@ -312,7 +449,11 @@ $$\hat{A} = \hat{A}^\dagger$$
 
 ---
 
+## Autovalores y autovectores
 
+![[strang-p217.png]]
+
+---
 ## Probabilidad
 ![](algebra_bayes.png)
 **Teorema de Bayes:**
@@ -339,11 +480,17 @@ donde $\{A_i\}$ es una partición del espacio muestral.
 
 ## Trigonometría
 
-## identidades
+### identidades
 
-- $e^{i\theta}=cos(\theta)+isen(\theta)$
+- $e^{ix}=cos(x)+isen(x)$
+- $sen(-x) = -sen(x)$
+- $cos(−x)=cos(x)$
 
-##  matriz de rotación
+mas en [LibreText](https://espanol.libretexts.org/Bookshelves/Matematicas/Precalculo_y_Trigonometria/Libro:_Trigonometr%C3%ADa_Primaria_(Corral)/03:_Identidades/3.01:_Identidades_trigonom%C3%A9tricas_b%C3%A1sicas)
+
+- otra: $1/\sqrt{2} == \sqrt{2}/2$
+- 
+###  matriz de rotación
 
 **Rotación por ángulo θ en sentido antihorario:**
 

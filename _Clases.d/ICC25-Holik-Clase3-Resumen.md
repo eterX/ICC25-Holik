@@ -456,6 +456,8 @@ $$H^\dagger = H$$
 
 #### 5.1 Compuerta NOT (Pauli-X)
 
+>[!note]  ver [[Algebra# Matriz de Pauli $X$ ($\sigma_1$, $\sigma_x$, bit-flip)]]
+
 **Matriz:**
 
 $$X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$$
@@ -526,7 +528,7 @@ $$Y = iXZ = -iZX$$
 - Y† = Y (hermítica)
 - Autovalores: ±1
 
-#### 5.4 Compuerta Identidad (I)
+#### 5.4 Compuerta Identidad ($\mathbb{I}$)
 
 **Matriz:**
 
