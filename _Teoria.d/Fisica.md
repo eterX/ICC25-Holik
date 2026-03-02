@@ -193,6 +193,11 @@ El espacio de estados de un sistema físico compuesto es el producto tensorial d
 
 
 ---
+## Principio de Incertidumbre
+
+- [ ] completar con Nielsen & Chuang §2.1.5
+
+---
 
 ## Observables y Medición
 

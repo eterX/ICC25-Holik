@@ -59,7 +59,7 @@ https://jupyter.org/try-jupyter/lab/
 ---
 ### simulación: arquitectura Jupyter
 
-![[blocks.png]]
+![[_Jupyter/entornosPython.d/blocks.png]]
 
 - muchos cuadernos -> un kernel
 - kernels variados
